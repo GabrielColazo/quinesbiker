@@ -1,0 +1,346 @@
+// ============================================================
+// _base.scss — Reset, tipografía global y utilidades base
+// ============================================================
+
+// Variables del proyecto (as * = sin namespace, usamos $var directo)
+@use 'variables' as *;
+
+// ─── GOOGLE FONTS (CSS puro, no Sass — @import url() se mantiene) ───
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+// ─── RESET Y BOX MODEL ──────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// ─── HTML Y BODY ────────────────────────────────────────────
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-body;
+  font-size: $fs-base;
+  font-weight: $fw-regular;
+  line-height: $lh-base;
+  color: $color-text;
+  background-color: $color-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// ─── TIPOGRAFÍA BASE ─────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: $fw-bold;
+  line-height: $lh-snug;
+  color: $color-text;
+}
+
+// Títulos con Bebas Neue (clase utilitaria)
+.font-display {
+  font-family: $font-display;
+  line-height: $lh-tight;
+  letter-spacing: 0.02em;
+}
+
+// Títulos con Rajdhani
+.font-heading {
+  font-family: $font-heading;
+}
+
+p {
+  font-family: $font-body;
+  color: $color-text-muted;
+  line-height: $lh-base;
+  margin-bottom: $spacer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $color-accent;
+  text-decoration: none;
+  transition: $transition-fast;
+
+  &:hover {
+    color: $color-accent-dark;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  padding-left: 0;
+  list-style: none;
+}
+
+// ─── SECCIONES ──────────────────────────────────────────────
+section {
+  position: relative;
+}
+
+.section-dark {
+  background-color: $color-bg;
+  color: $color-text;
+}
+
+.section-darker {
+  background-color: $color-bg-section;
+  color: $color-text;
+}
+
+.section-light {
+  background-color: $color-bg-light;
+  color: $color-text-dark;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-text-dark;
+  }
+
+  p {
+    color: $color-text-dark-muted;
+  }
+}
+
+// Padding de secciones — mobile first
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @media (min-width: 992px) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+// ─── TÍTULOS DE SECCIÓN ─────────────────────────────────────
+.section-title {
+  font-family: $font-display;
+  font-size: $fs-4xl;
+  line-height: $lh-tight;
+  color: $color-text;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: 768px) {
+    font-size: $fs-5xl;
+  }
+
+  &--dark {
+    color: $color-text-dark;
+  }
+}
+
+.section-subtitle {
+  font-family: $font-heading;
+  font-size: $fs-lg;
+  font-weight: $fw-regular;
+  color: $color-text-muted;
+  margin-bottom: 2.5rem;
+
+  &--dark {
+    color: $color-text-dark-muted;
+  }
+}
+
+// Línea decorativa bajo títulos de sección
+.section-title-line {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background: $gradient-cta;
+  border-radius: $radius-pill;
+  margin-bottom: 1rem;
+}
+
+// ─── BOTONES ────────────────────────────────────────────────
+.btn-brand {
+  font-family: $font-heading;
+  font-weight: $fw-bold;
+  font-size: $fs-lg;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: $radius-pill;
+  border: none;
+  cursor: pointer;
+  transition: $transition-base;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  // CTA principal — naranja
+  &--primary {
+    background: $gradient-cta;
+    color: #fff;
+    box-shadow: $shadow-glow-orange;
+
+    &:hover {
+      background: $color-accent-dark;
+      box-shadow: 0 0 32px rgba($color-accent, 0.55);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  // Secundario — outline violeta
+  &--outline {
+    background: transparent;
+    color: $color-text;
+    border: 2px solid rgba($color-primary-light, 0.5);
+
+    &:hover {
+      border-color: $color-primary-light;
+      background: rgba($color-primary, 0.15);
+      color: $color-text;
+      transform: translateY(-2px);
+    }
+  }
+
+  // Ghost — outline blanco (sobre fondos oscuros)
+  &--ghost {
+    background: transparent;
+    color: $color-text;
+    border: 2px solid $color-border;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+      color: $color-text;
+    }
+  }
+}
+
+// ─── BADGE / ETIQUETA ───────────────────────────────────────
+.badge-brand {
+  font-family: $font-heading;
+  font-weight: $fw-bold;
+  font-size: $fs-xs;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.85rem;
+  border-radius: $radius-pill;
+  display: inline-block;
+
+  &--orange {
+    background: rgba($color-accent, 0.15);
+    color: $color-accent;
+    border: 1px solid rgba($color-accent, 0.3);
+  }
+
+  &--purple {
+    background: rgba($color-primary, 0.2);
+    color: $color-primary-light;
+    border: 1px solid rgba($color-primary-light, 0.3);
+  }
+
+  &--highlight {
+    background: $gradient-cta;
+    color: #fff;
+    border: none;
+  }
+}
+
+// ─── CARDS BASE ─────────────────────────────────────────────
+.card-brand {
+  background: $gradient-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: 1.75rem;
+  transition: $transition-base;
+
+  &:hover {
+    border-color: rgba($color-primary-light, 0.3);
+    box-shadow: $shadow-card;
+    transform: translateY(-4px);
+  }
+
+  &--highlight {
+    border-color: rgba($color-accent, 0.4);
+    box-shadow: $shadow-glow-orange;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: $radius-lg;
+      background: rgba($color-accent, 0.04);
+      pointer-events: none;
+    }
+  }
+}
+
+// ─── GRADIENTE DE TEXTO (texto con colores del logo) ────────
+.text-gradient {
+  background: $gradient-brand;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cta {
+  background: $gradient-cta;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ─── SEPARADOR DECORATIVO ────────────────────────────────────
+.divider-brand {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, $color-border, transparent);
+  margin: 2rem 0;
+}
+
+// ─── OVERLAY PARA IMÁGENES DE FONDO ─────────────────────────
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: $color-overlay;
+  z-index: 0;
+}
+
+.bg-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: $gradient-hero;
+  z-index: 0;
+}
+
+// Contenido sobre overlay
+.content-over-bg {
+  position: relative;
+  z-index: 1;
+}
+
+// ─── UTILIDADES ─────────────────────────────────────────────
+.text-accent   { color: $color-accent; }
+.text-primary  { color: $color-primary-light; }
+.text-muted-brand { color: $color-text-muted; }
+.text-silver   { color: $color-silver; }
+
+.bg-card       { background-color: $color-bg-card; }
+.bg-dark-brand { background-color: $color-bg; }
+
+// Scroll margin para anclas con navbar fija
+[id] {
+  scroll-margin-top: 70px;
+}

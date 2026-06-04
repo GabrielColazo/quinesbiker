@@ -1,0 +1,28 @@
+// ============================================================
+// main.scss — Quines Biker Escuela de Ciclismo
+// ============================================================
+
+
+@use 'variables' as *;
+
+// 2. Base / reset global
+@use 'base';
+
+// 3. Componentes de sección
+@use 'navbar';
+@use 'hero';
+@use 'niveles';
+@use 'presencial';
+@use 'bikepark';
+@use 'planes';
+@use 'metodologia';
+@use 'coach';
+@use 'whatsapp';
+@use 'footer';
+
+
+
+
+
+// 4. Elementos flotantes
+

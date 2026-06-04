@@ -1,0 +1,189 @@
+// ============================================================
+// _metodologia.scss — Quines Biker
+// Sección 6: Metodología y tecnología
+// ============================================================
+
+@use 'variables' as *;
+
+.metodologia {
+  background-color: $color-bg-section;
+  padding: 5rem 0;
+
+  @media (min-width: 992px) {
+    padding: 7rem 0;
+  }
+
+  // ─── ENCABEZADO ─────────────────────────────────────────
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-4xl;
+    line-height: $lh-tight;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: $fs-5xl;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-heading;
+    font-size: $fs-lg;
+    font-weight: $fw-regular;
+    color: $color-text-muted;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  // ─── TEXTO PRINCIPAL ────────────────────────────────────
+  &__body {
+    max-width: 680px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+
+    p {
+      font-family: $font-body;
+      font-size: $fs-lg;
+      color: $color-text-muted;
+      line-height: $lh-base;
+    }
+  }
+
+  // ─── ÍCONOS DE PLATAFORMAS ──────────────────────────────
+  &__platforms {
+    margin-bottom: 3.5rem;
+  }
+
+  &__platforms-label {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-xs;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__platforms-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__platform-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: $transition-base;
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+      border-color: rgba($color-primary-light, 0.25);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__platform-icon {
+    font-size: 1.25rem;
+  }
+
+  &__platform-name {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-base;
+    color: $color-text;
+    letter-spacing: 0.02em;
+  }
+
+  // ─── PASOS / PROCESO ────────────────────────────────────
+  &__steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__step {
+    background: linear-gradient(145deg, $color-bg-card, rgba($color-primary, 0.08));
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: $transition-base;
+
+    &:hover {
+      border-color: rgba($color-primary-light, 0.25);
+      transform: translateY(-4px);
+      box-shadow: $shadow-card;
+    }
+
+    // Conector entre pasos — solo desktop
+    &:not(:last-child)::after {
+      display: none;
+
+      @media (min-width: 992px) {
+        content: '→';
+        display: block;
+        position: absolute;
+        right: -0.85rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $color-text-muted;
+        font-size: $fs-lg;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__step-number {
+    font-family: $font-display;
+    font-size: $fs-3xl;
+    line-height: 1;
+    background: $gradient-cta;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+  }
+
+  &__step-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__step-title {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-lg;
+    color: $color-text;
+    margin-bottom: 0.5rem;
+  }
+
+  &__step-text {
+    font-family: $font-body;
+    font-size: $fs-sm;
+    color: $color-text-muted;
+    line-height: $lh-base;
+    margin-bottom: 0;
+  }
+}

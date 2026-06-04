@@ -1,0 +1,12 @@
+# Extensiones y herramientas de desarrollo
+.sass-cache/
+.sourcemaps/
+node_modules/
+dist/
+
+# Archivos del sistema operativo (ruido visual)
+.DS_Store
+Thumbs.db
+
+# Configuraciones locales de tu editor
+.vscode/

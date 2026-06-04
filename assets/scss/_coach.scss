@@ -1,0 +1,317 @@
+// ============================================================
+// _coach.scss — Quines Biker
+// Sección 7: Sobre los Coaches (Carrusel Premium)
+// ============================================================
+
+@use 'variables' as *;
+
+.coach {
+  background-color: $color-bg;
+  padding: 5rem 0 6rem 0; // Agregamos un poco más de espacio abajo para los indicadores
+
+  @media (min-width: 992px) {
+    padding: 7rem 0 8rem 0;
+  }
+
+  // ─── ENCABEZADO ─────────────────────────────────────────
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-4xl;
+    line-height: $lh-tight;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: $fs-5xl;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-heading;
+    font-size: $fs-lg;
+    font-weight: $fw-regular;
+    color: $color-text-muted;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  // ─── LAYOUT INTERNO (SLIDES) ────────────────────────────
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 0 1rem; // Evita que el contenido toque los bordes en mobile
+    
+    // Forzamos un comportamiento limpio en transiciones para evitar saltos de altura abruptos
+    min-height: auto; 
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; // Un poco más de aire para separar la foto del texto
+      padding: 0 4rem; // Espacio seguro para que las flechas laterales no pisen el contenido
+    }
+  }
+
+  // ─── FOTO ───────────────────────────────────────────────
+  &__photo-wrap {
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto; // Centrado en mobile si rompe el grid
+    width: 100%;
+  }
+
+  &__photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: $radius-xl;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    // Placeholder si no hay foto
+    &--placeholder {
+      background: linear-gradient(145deg, $color-bg-card, rgba($color-primary, 0.15));
+      border: 1px solid rgba($color-border, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      min-height: 380px;
+
+      @media (min-width: 992px) {
+        min-height: 480px;
+      }
+    }
+  }
+
+  // Decoración detrás de la foto
+  &__photo-deco {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-xl;
+    border: 2px solid rgba($color-accent, 0.25);
+    z-index: 0;
+    transition: transform 0.4s ease;
+  }
+
+  // Animación sutil de la decoración cuando el slide está activo
+  .carousel-item.active &__photo-wrap:hover &__photo-deco {
+    transform: translate(-4px, -4px);
+  }
+
+  // Badge flotante sobre la foto
+  &__photo-badge {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+    background: rgba($color-bg, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba($color-border, 0.8);
+    border-radius: $radius-lg;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  &__photo-badge-icon {
+    font-size: 1.5rem;
+  }
+
+  &__photo-badge-text {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-sm;
+    color: $color-text;
+    line-height: 1.3;
+
+    span {
+      display: block;
+      font-weight: $fw-regular;
+      font-size: $fs-xs;
+      color: $color-text-muted;
+    }
+  }
+
+  // ─── CONTENIDO (TEXTOS Y BLOQUES) ───────────────────────
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: $fs-4xl;
+    line-height: $lh-tight;
+    color: $color-text;
+    margin-bottom: 0.25rem;
+
+    @media (min-width: 768px) {
+      font-size: $fs-5xl;
+    }
+  }
+
+  &__role {
+    font-family: $font-heading;
+    font-weight: $fw-semibold;
+    font-size: $fs-lg;
+    color: $color-accent;
+    letter-spacing: 0.05em;
+    text-transform: uppercase; // Le da un toque más "Pro / Institucional" al rol
+  }
+
+  &__quote {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid $color-accent;
+
+    p {
+      font-family: $font-body;
+      font-size: $fs-lg;
+      font-style: italic;
+      color: rgba($color-text, 0.9);
+      line-height: $lh-base;
+      margin-bottom: 0;
+    }
+  }
+
+  &__bio {
+    font-family: $font-body;
+    font-size: $fs-base;
+    color: $color-text-muted;
+    line-height: $lh-base;
+    margin-bottom: 0;
+  }
+
+  // ─── STATS DEL COACH ────────────────────────────────────
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba($color-border, 0.6);
+    border-radius: $radius-lg;
+    
+    // Transición suave al cambiar de slide
+    transition: opacity 0.3s ease;
+  }
+
+  &__stat {
+    text-align: center;
+  }
+
+  &__stat-number {
+    font-family: $font-display;
+    font-size: $fs-3xl;
+    line-height: 1;
+    background: $gradient-cta;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  &__stat-label {
+    font-family: $font-heading;
+    font-size: $fs-xs;
+    font-weight: $fw-semibold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+  }
+
+  // ─── BOTONES DE ACCIÓN ──────────────────────────────────
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem; // Separación respecto a los indicadores inferiores
+  }
+
+  // ─── CONTROLES DEL CARRUSEL (FLECHAS CUSTOMIZADAS) ──────
+  &__control {
+    width: 45px;
+    height: 45px;
+    background-color: rgba($color-bg-card, 0.6);
+    border: 1px solid rgba($color-border, 0.4);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; // Ocultas por defecto en mobile para no pisar el diseño
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    &:hover {
+      background-color: $color-accent;
+      border-color: $color-accent;
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        filter: brightness(0) invert(1); // Hace la flecha negra/blanca según contraste
+      }
+    }
+
+    // Mostramos las flechas únicamente en pantallas medianas/grandes
+    @media (min-width: 992px) {
+      opacity: 0.7;
+      
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &--prev {
+      left: -15px;
+      @media (min-width: 1200px) { left: -30px; }
+    }
+
+    &--next {
+      right: -15px;
+      @media (min-width: 1200px) { right: -30px; }
+    }
+  }
+
+  // Mostrar flechas cuando se pasa el mouse por encima del contenedor del carrusel entero
+  #carouselCoaches:hover &__control {
+    @media (min-width: 992px) {
+      opacity: 0.8;
+      &:hover { opacity: 1; }
+    }
+  }
+
+  // ─── INDICADORES CUSTOMIZADOS (PUNTITOS INFERIORES) ─────
+  &__indicators {
+    bottom: -3.5rem; // Los saca afuera del contenedor para que no se encimen con los textos
+
+    button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%; // De líneas nativas de bootstrap a círculos minimalistas
+      background-color: rgba($color-text-muted, 0.4);
+      border: none;
+      transition: all 0.3s ease;
+      margin: 0 6px;
+
+      &.active {
+        background-color: $color-accent;
+        transform: scale(1.2); // El punto activo resalta levemente en tamaño
+      }
+    }
+  }
+}

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quines Biker — Escuela de Ciclismo</title>
+  <meta name="description"
+    content="Escuela de Ciclismo Quines Biker. Planificación inteligente, técnica y seguimiento para atletas de todos los niveles." />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS compilado -->
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-quines">
+    <div class="container">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-bicycle navbar-brand__icon"></i>
+        <span class="navbar-brand__text">
+          QUINES <span class="navbar-brand__divider">|</span> BIKER
+        </span>
+      </a>
+
+      <!-- Hamburguesa mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-lg-center gap-lg-1 me-lg-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#niveles">Entrenar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#presencial">Presencial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bikepark">Bike Park</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#planes">Planes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#metodologia">Metodología</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#coach">El Coach</a>
+          </li>
+        </ul>
+        <!-- CTA navbar -->
+        <a class="nav-link navbar-cta" href="#planes">Empezar a Entrenar</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="inicio">
+
+    <!-- Fondo con imagen + overlay -->
+    <div class="hero__bg"></div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+          <div class="hero__content">
+
+            <!-- Badge -->
+            <span class="hero__badge">Escuela de Ciclismo · Quines Biker</span>
+
+            <!-- Título H1 -->
+            <h1 class="hero__title">
+              Alcanzá tu<br />
+              <span>máximo rendimiento</span><br />
+              sobre la bici.
+            </h1>
+            <!-- Subtítulo -->
+            <p class="hero__subtitle">
+              Planificación inteligente, técnica y seguimiento para atletas de todos los niveles. Coaching a distancia y
+              clases presenciales con circuito propio.
+            </p>
+
+            <!-- Botones -->
+            <div class="hero__actions">
+              <a href="#planes" class="btn-brand btn-brand--primary">
+                Empezar a Entrenar
+              </a>
+              <a href="#bikepark" class="btn-brand btn-brand--ghost">
+                Conocer el Bike Park
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="hero__stats">
+              <div class="hero__stat">
+                <span class="hero__stat-number">3</span>
+                <span class="hero__stat-label">Niveles de entrenamiento</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-number">100%</span>
+                <span class="hero__stat-label">Circuito propio</span>
+              </div>
+              <div class="hero__stat">
+                <span class="hero__stat-number">Online</span>
+                <span class="hero__stat-label">Coaching a distancia</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       NIVELES
+  ============================================================ -->
+  <section class="niveles" id="niveles">
+    <div class="container">
+
+      <div class="niveles__header">
+        <div class="section-title-line"></div>
+        <h2 class="niveles__title">Entrená según tus objetivos</h2>
+        <p class="niveles__subtitle">Elegí el nivel que se adapta a tu momento actual</p>
+      </div>
+
+      <div class="niveles__grid">
+
+        <!-- Inicial -->
+        <div class="niveles__card niveles__card--inicial">
+          <span class="niveles__badge">Inicial</span>
+          <div class="niveles__icon">🟢</div>
+          <h3 class="niveles__card-title">Nivel Inicial</h3>
+          <p class="niveles__card-text">Si estás dando tus primeros pedaleos, querés mejorar tu salud, ganar resistencia
+            o simplemente disfrutar más de tus salidas sin terminar agotado.</p>
+          <span class="niveles__card-number">01</span>
+        </div>
+
+        <!-- Intermedio -->
+        <div class="niveles__card niveles__card--intermedio">
+          <span class="niveles__badge">Intermedio</span>
+          <div class="niveles__icon">🔵</div>
+          <h3 class="niveles__card-title">Nivel Intermedio</h3>
+          <p class="niveles__card-text">Para quienes ya tienen ritmo, buscan bajar sus tiempos, dominar terrenos más
+            exigentes o prepararse para sus primeros desafíos y carreras.</p>
+          <span class="niveles__card-number">02</span>
+        </div>
+
+        <!-- Pro -->
+        <div class="niveles__card niveles__card--pro">
+          <span class="niveles__badge">Pro</span>
+          <div class="niveles__icon">🔴</div>
+          <h3 class="niveles__card-title">Nivel Pro</h3>
+          <p class="niveles__card-text">Entrenamiento de alta exigencia enfocado en la competencia. Optimizá tus zonas
+            de potencia, ritmo cardíaco y estrategia para buscar el podio.</p>
+          <span class="niveles__card-number">03</span>
+        </div>
+
+      </div>
+
+      <div class="niveles__cta">
+        <p>¿No sabés en qué nivel estás? Consultanos sin compromiso.</p>
+        <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20saber%20en%20qué%20nivel%20estoy"
+          class="btn-brand btn-brand--outline" target="_blank">
+          Consultar por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PRESENCIAL
+  ============================================================ -->
+  <section class="presencial" id="presencial">
+    <div class="container">
+
+      <div class="presencial__header">
+        <div class="section-title-line"></div>
+        <h2 class="presencial__title">¿Sos de la zona? Entrená con nosotros en vivo</h2>
+        <p class="presencial__subtitle">Combiná tu planificación con nuestras actividades presenciales para perfeccionar
+          tu técnica y rodar en grupo.</p>
+      </div>
+
+      <div class="presencial__grid">
+
+        <!-- Atletas locales -->
+        <div class="presencial__card presencial__card--adultos">
+          <div class="presencial__card-header">
+            <div class="presencial__card-icon presencial__card-icon--adultos">🚴</div>
+            <span class="presencial__badge presencial__badge--adultos">Adultos</span>
+          </div>
+          <h3 class="presencial__card-title">Atletas Locales</h3>
+          <p class="presencial__card-text">Dos encuentros semanales en grupo para trabajar técnica de pedaleo, fuerza
+            específica, series de velocidad y ritmo de carrera.</p>
+          <div class="presencial__schedule">
+            <div class="presencial__schedule-item">
+              <div class="presencial__schedule-icon presencial__schedule-icon--day">📅</div>
+              <div class="presencial__schedule-text">
+                Martes y Jueves
+                <span>Dos encuentros semanales</span>
+              </div>
+            </div>
+            <div class="presencial__schedule-item">
+              <div class="presencial__schedule-icon presencial__schedule-icon--note">📍</div>
+              <div class="presencial__schedule-text">
+                Predio propio Quines Biker
+                <span>Circuito cerrado y seguro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Escuela infantil -->
+        <div class="presencial__card presencial__card--kids">
+          <div class="presencial__card-header">
+            <div class="presencial__card-icon presencial__card-icon--kids">🧒</div>
+            <span class="presencial__badge presencial__badge--kids">Quines Biker Kids</span>
+          </div>
+          <h3 class="presencial__card-title">Escuela Infantil</h3>
+          <p class="presencial__card-text">Un espacio dedicado a los más chicos. Aprendizaje a través del juego,
+            coordinación y compañerismo. Total tranquilidad para los padres.</p>
+          <div class="presencial__schedule">
+            <div class="presencial__schedule-item">
+              <div class="presencial__schedule-icon presencial__schedule-icon--day">📅</div>
+              <div class="presencial__schedule-text">
+                Todos los Sábados
+                <span>10:00 a 12:00 hs</span>
+              </div>
+            </div>
+            <div class="presencial__schedule-item">
+              <div class="presencial__schedule-icon presencial__schedule-icon--note">📍</div>
+              <div class="presencial__schedule-text">
+                Íntegramente en nuestro predio
+                <span>Sin tráfico, 100% seguro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="presencial__cta">
+        <p>¿Querés reservar un lugar? Los cupos son limitados.</p>
+        <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20consultar%20por%20clases%20presenciales%20en%20Quines%20Biker"
+          class="btn-brand btn-brand--primary" target="_blank">
+          Consultar Disponibilidad
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BIKE PARK
+  ============================================================ -->
+  <section class="bikepark" id="bikepark">
+    <div class="container">
+
+      <div class="bikepark__header">
+        <span class="bikepark__badge">Diferenciador exclusivo</span>
+        <h2 class="bikepark__title">Entrená en nuestro propio <span>Bike Park</span></h2>
+        <p class="bikepark__subtitle">Un circuito exclusivo diseñado para llevar tu técnica y tu seguridad al siguiente
+          nivel.</p>
+      </div>
+
+      <div class="row align-items-center g-4">
+
+        <!-- Imagen -->
+        <div class="col-12 col-lg-6">
+          <div class="bikepark__visual bikepark__visual--placeholder">
+            🚵
+            <!-- Reemplazar con: <img src="./assets/img/bikepark.jpg" alt="Bike Park Quines Biker" /> -->
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="col-12 col-lg-6">
+          <div class="bikepark__features">
+
+            <div class="bikepark__feature">
+              <div class="bikepark__feature-icon">📍</div>
+              <div class="bikepark__feature-body">
+                <div class="bikepark__feature-title">Entorno 100% Seguro</div>
+                <p class="bikepark__feature-text">Olvidate del tráfico y los riesgos de la calle. Un predio cerrado
+                  ideal para entrenar concentrado y sin interrupciones.</p>
+              </div>
+            </div>
+
+            <div class="bikepark__feature">
+              <div class="bikepark__feature-icon">📈</div>
+              <div class="bikepark__feature-body">
+                <div class="bikepark__feature-title">Zonas Técnicas</div>
+                <p class="bikepark__feature-text">Circuitos adaptados con peraltes, zonas de salto, curvas cerradas y
+                  obstáculos para pulir el manejo al máximo.</p>
+              </div>
+            </div>
+
+            <div class="bikepark__feature">
+              <div class="bikepark__feature-icon">🚴‍♂️</div>
+              <div class="bikepark__feature-body">
+                <div class="bikepark__feature-title">Acceso incluido</div>
+                <p class="bikepark__feature-text">Acceso libre al circuito para todos los alumnos de clases presenciales
+                  y de la escuela infantil Quines Biker Kids.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bikepark__cta">
+        <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20conocer%20el%20Bike%20Park%20de%20Quines%20Biker"
+          class="btn-brand btn-brand--primary" target="_blank">
+          Quiero conocer el Bike Park
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PLANES
+  ============================================================ -->
+  <section class="planes" id="planes">
+    <div class="container">
+
+      <div class="planes__header">
+        <div class="section-title-line"></div>
+        <h2 class="planes__title">Elegí el plan que se adapta a tu ritmo</h2>
+        <p class="planes__subtitle">Coaching a distancia para atletas de todo el país y el mundo.</p>
+      </div>
+
+      <div class="planes__grid">
+
+        <!-- Plan Básico -->
+        <div class="planes__card planes__card--basico">
+          <div class="planes__plan-name">Plan Básico</div>
+          <div class="planes__price">
+            <span class="planes__price-currency">$</span>
+            <span class="planes__price-amount">30.000</span>
+            <span class="planes__price-period">/ mes</span>
+          </div>
+          <p class="planes__price-note">Transferencia · MODO · Mercado Pago</p>
+          <hr class="planes__divider" />
+          <ul class="planes__features">
+            <li class="planes__feature">
+              <span class="planes__feature-check">✓</span>
+              Planificación de entrenamiento semanal
+            </li>
+            <li class="planes__feature">
+              <span class="planes__feature-check">✓</span>
+              Envío de rutina en formato Excel
+            </li>
+            <li class="planes__feature">
+              <span class="planes__feature-check">✓</span>
+              Adaptado a tus horarios y nivel (Inicial, Intermedio o Pro)
+            </li>
+          </ul>
+          <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20inscribirme%20al%20Plan%20B%C3%A1sico%20de%20Quines%20Biker"
+            class="planes__btn planes__btn--basico" target="_blank">
+            Elegir Plan Básico
+          </a>
+        </div>
+
+        <!-- Plan Premium -->
+        <div class="planes__card planes__card--premium">
+          <span class="planes__popular">⭐ Más Elegido</span>
+          <div class="planes__plan-name">Plan Premium</div>
+          <div class="planes__price">
+            <span class="planes__price-currency">$</span>
+            <span class="planes__price-amount">60.000</span>
+            <span class="planes__price-period">/ mes</span>
+          </div>
+          <p class="planes__price-note">Transferencia · MODO · Mercado Pago</p>
+          <hr class="planes__divider" />
+          <ul class="planes__features">
+            <li class="planes__feature">
+              <span class="planes__feature-check">✓</span>
+              Planificación y seguimiento avanzado por TrainingPeaks
+            </li>
+            <li class="planes__feature">
+              <span class="planes__feature-check">✓</span>
+              Plan de alimentación enfocado en rendimiento y salud
+            </li>
+            <li class="planes__feature">
+              <span class="planes__feature-check">✓</span>
+              Seguimiento semanal y cambio de hábitos saludables
+            </li>
+            <li class="planes__feature">
+              <span class="planes__feature-check">✓</span>
+              Feedback y análisis continuo de métricas
+            </li>
+          </ul>
+          <a href="https://wa.me/2664818711text=Hola!%20Quiero%20inscribirme%20al%20Plan%20Premium%20de%20Quines%20Biker"
+            class="planes__btn planes__btn--premium" target="_blank">
+            Elegir Plan Premium
+          </a>
+        </div>
+
+      </div>
+
+      <!-- CTA Presencial -->
+      <div class="planes__presencial">
+        <p>¿Buscás clases presenciales o la Escuela Infantil? Consultanos por los abonos disponibles.</p>
+        <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20consultar%20por%20abonos%20presenciales%20en%20Quines%20Biker"
+          class="btn-brand btn-brand--ghost" target="_blank">
+          Consultar Abonos Presenciales
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       METODOLOGÍA
+  ============================================================ -->
+  <section class="metodologia" id="metodologia">
+    <div class="container">
+
+      <div class="metodologia__header">
+        <div class="section-title-line"></div>
+        <h2 class="metodologia__title">Entrená como los profesionales, estés donde estés</h2>
+        <p class="metodologia__subtitle">Tecnología de élite al servicio de tu rendimiento</p>
+      </div>
+
+      <div class="metodologia__body">
+        <p>No importa la distancia. Analizamos tus entrenamientos mediante TrainingPeaks, la plataforma líder mundial en
+          ciclismo. Sincronizá tus dispositivos y llevá un control exacto de tu carga de entrenamiento, fatiga y
+          evolución.</p>
+      </div>
+
+      <!-- Plataformas -->
+      <div class="metodologia__platforms">
+        <div class="metodologia__platforms-label">Compatible con tus dispositivos y apps</div>
+        <div class="metodologia__platforms-grid">
+          <div class="metodologia__platform-item">
+            <span class="metodologia__platform-icon">📊</span>
+            <span class="metodologia__platform-name">TrainingPeaks</span>
+          </div>
+          <div class="metodologia__platform-item">
+            <span class="metodologia__platform-icon">🟠</span>
+            <span class="metodologia__platform-name">Strava</span>
+          </div>
+          <div class="metodologia__platform-item">
+            <span class="metodologia__platform-icon">⌚</span>
+            <span class="metodologia__platform-name">Garmin</span>
+          </div>
+          <div class="metodologia__platform-item">
+            <span class="metodologia__platform-icon">🔴</span>
+            <span class="metodologia__platform-name">Wahoo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pasos -->
+      <div class="metodologia__steps">
+
+        <div class="metodologia__step">
+          <div class="metodologia__step-number">01</div>
+          <div class="metodologia__step-icon">📋</div>
+          <div class="metodologia__step-title">Evaluación inicial</div>
+          <p class="metodologia__step-text">Analizamos tu nivel, objetivos, horarios y dispositivos disponibles.</p>
+        </div>
+
+        <div class="metodologia__step">
+          <div class="metodologia__step-number">02</div>
+          <div class="metodologia__step-icon">🗓️</div>
+          <div class="metodologia__step-title">Plan personalizado</div>
+          <p class="metodologia__step-text">Diseñamos tu planificación semanal adaptada a tu vida y metas.</p>
+        </div>
+
+        <div class="metodologia__step">
+          <div class="metodologia__step-number">03</div>
+          <div class="metodologia__step-icon">📡</div>
+          <div class="metodologia__step-title">Sincronización</div>
+          <p class="metodologia__step-text">Conectás tus dispositivos a TrainingPeaks y registramos cada sesión.</p>
+        </div>
+
+        <div class="metodologia__step">
+          <div class="metodologia__step-number">04</div>
+          <div class="metodologia__step-icon">📈</div>
+          <div class="metodologia__step-title">Seguimiento continuo</div>
+          <p class="metodologia__step-text">Feedback semanal, ajustes de carga y análisis de tu evolución.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+     COACH (Carrusel de Entrenadores de Elite)
+============================================================ -->
+  <section class="coach" id="coach">
+    <div class="container">
+
+      <!-- Encabezado de la sección -->
+      <div class="coach__header">
+        <div class="section-title-line"></div>
+        <h2 class="coach__title">Staff de Elite Detrás de Quines Biker</h2>
+        <p class="coach__subtitle">Experiencia internacional, ciencia y pasión sobre la bici al servicio de tu
+          rendimiento.</p>
+      </div>
+
+      <!-- Componente Carrusel de Bootstrap -->
+      <div id="carouselCoaches" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicadores de posición (Puntitos/Rayitas abajo) -->
+        <div class="carousel-indicators coach__indicators">
+          <button type="button" data-bs-target="#carouselCoaches" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Marcelo Floriani"></button>
+          <button type="button" data-bs-target="#carouselCoaches" data-bs-slide-to="1"
+            aria-label="Luis Floriani"></button>
+          <button type="button" data-bs-target="#carouselCoaches" data-bs-slide-to="2"
+            aria-label="Juan José Godoy"></button>
+        </div>
+
+        <!-- Contenedor de las tarjetas correderas -->
+        <div class="carousel-inner">
+
+          <!-- COACH 1: MARCELO FLORIANI -->
+          <div class="carousel-item active">
+            <div class="coach__inner">
+              <!-- Reemplazá el bloque de la foto 1 por esto: -->
+              <div class="coach__photo-wrap">
+                <img class="coach__photo" src="./assets/img/Marcelo Enrique Floriani.webp"
+                  alt="Marcelo Floriani - Coach Quines Biker" />
+                <div class="coach__photo-deco"></div>
+                <div class="coach__photo-badge">
+                  <span class="coach__photo-badge-icon">🏆</span>
+                  <div class="coach__photo-badge-text">
+                    Fundador
+                    <span>Mundialista UCI</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contenido Coach 1 -->
+              <div class="coach__content">
+                <div>
+                  <div class="coach__name">Marcelo Floriani</div>
+                  <div class="coach__role">Coach de MTB & Co-Fundador</div>
+                </div>
+                <div class="coach__quote">
+                  <p>"Mi objetivo es darte la estructura y motivación que necesitás para superar tus propios límites,
+                    volcando años de competencia internacional en tu plan."</p>
+                </div>
+                <p class="coach__bio">
+                  Ciclista destacado de San Luis y atleta internacional en los Mundiales UCI 2022, 2023 y 2026 en la
+                  exigente modalidad de Mountain Bike XCM. Subcampeón Argentino en Parejas y reciente ganador de la
+                  Vuelta del Oro 2026. Como coach, se enfoca en el desarrollo estratégico y la preparación integral de
+                  ciclistas de todos los niveles.
+                </p>
+                <div class="coach__stats">
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">3x</span>
+                    <span class="coach__stat-label">Mundialista UCI</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">B1</span>
+                    <span class="coach__stat-label">Subcampeón Arg.</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">2026</span>
+                    <span class="coach__stat-label">Vuelta del Oro</span>
+                  </div>
+                </div>
+                <div class="coach__actions">
+                  <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20empezar%20a%20entrenar%20con%20Marcelo%20Floriani"
+                    class="btn-brand btn-brand--primary" target="_blank">
+                    Entrenar con Marcelo
+                  </a>
+                  <a href="#planes" class="btn-brand btn-brand--outline">
+                    Ver Planes
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COACH 2: LUIS FLORIANI -->
+          <div class="carousel-item">
+            <div class="coach__inner">
+              <!-- Reemplazá el bloque de la foto 2 por esto: -->
+              <div class="coach__photo-wrap">
+                <img class="coach__photo" src="./assets/img/Luis Marcelo Floriani.webp"
+                  alt="Luis Floriani - Atleta de Élite Quines Biker" />
+                <div class="coach__photo-deco"></div>
+                <div class="coach__photo-badge">
+                  <span class="coach__photo-badge-icon">🥇</span>
+                  <div class="coach__photo-badge-text">
+                    Fundador
+                    <span>Podio Panamericano</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contenido Coach 2 -->
+              <div class="coach__content">
+                <div>
+                  <div class="coach__name">Luis Floriani</div>
+                  <div class="coach__role">Atleta de Élite & Coach Deportivo</div>
+                </div>
+                <div class="coach__quote">
+                  <p>"El éxito en el ciclismo depende de la resiliencia mental. Fusiono mi experiencia en las carreras
+                    más duras de América con la gestión emocional."</p>
+                </div>
+                <p class="coach__bio">
+                  Referente del MTB nacional y Bicampeón Provincial. Cuenta con tres participaciones mundialistas
+                  (destacando su Top 15 en Villa La Angostura y Nevados de Chillán) y Medalla de Bronce Panamericana. Su
+                  metodología combina el entrenamiento físico de alto rendimiento con liderazgo estratégico para
+                  potenciar tanto a amateurs como a profesionales.
+                </p>
+                <div class="coach__stats">
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">4x</span>
+                    <span class="coach__stat-label">Podio Río Pinto</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">Top15</span>
+                    <span class="coach__stat-label">Mundial MTB</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">2x</span>
+                    <span class="coach__stat-label">Camp. Provincial</span>
+                  </div>
+                </div>
+                <div class="coach__actions">
+                  <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20empezar%20a%20entrenar%20con%20Luis%20Floriani"
+                    class="btn-brand btn-brand--primary" target="_blank">
+                    Entrenar con Luis
+                  </a>
+                  <a href="#planes" class="btn-brand btn-brand--outline">
+                    Ver Planes
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COACH 3: JUAN JOSÉ GODOY -->
+          <div class="carousel-item">
+            <div class="coach__inner">
+
+              <!-- Reemplazá el bloque de la foto 3 por esto: -->
+              <div class="coach__photo-wrap">
+                <img class="coach__photo" src="./assets/img/Juan Jose Godoy.webp"
+                  alt="Juan José Godoy - Entrenador Quines Biker" />
+                <div class="coach__photo-deco"></div>
+                <div class="coach__photo-badge">
+                  <span class="coach__photo-badge-icon">⚡</span>
+                  <div class="coach__photo-badge-text">
+                    ACSM Certified
+                    <span>Analista de Datos</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contenido Coach 3 -->
+              <div class="coach__content">
+                <div>
+                  <div class="coach__name">Juan José Godoy</div>
+                  <div class="coach__role">Entrenador Especializado & Analista</div>
+                </div>
+                <div class="coach__quote">
+                  <p>"Combinamos la experiencia práctica, la formación científica y el análisis riguroso de datos para
+                    optimizar tu preparación de forma sostenible."</p>
+                </div>
+                <p class="coach__bio">
+                  Ex-ciclista Élite nacional e internacional. Con más de 8 años de trayectoria, está certificado por la
+                  ACSM y G-SE. Ha trabajado como analista de rendimiento y control de cargas para la Selección Argentina
+                  de Ruta, además de asesorar de forma privada a atletas de vanguardia tanto en ciclismo de ruta como en
+                  MTB.
+                </p>
+                <div class="coach__stats">
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">+8A</span>
+                    <span class="coach__stat-label">De Trayectoria</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">DATA</span>
+                    <span class="coach__stat-label">Staff Selec. Nac.</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">ÉLITE</span>
+                    <span class="coach__stat-label">Ruta & MTB</span>
+                  </div>
+                </div>
+                <div class="coach__actions">
+                  <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20empezar%20a%20entrenar%20con%20Juan%20Jose%20Godoy"
+                    class="btn-brand btn-brand--primary" target="_blank">
+                    Entrenar con Juan José
+                  </a>
+                  <a href="#planes" class="btn-brand btn-brand--outline">
+                    Ver Planes
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controles de navegación laterales (Flechas) -->
+        <button class="carousel-control-prev coach__control coach__control--prev" type="button"
+          data-bs-target="#carouselCoaches" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next coach__control coach__control--next" type="button"
+          data-bs-target="#carouselCoaches" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- ============================================================
+     FOOTER
+============================================================ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__main">
+
+        <!-- Brand -->
+        <div class="footer__brand">
+          <img class="footer__logo" src="./assets/img/logo.png" alt="Quines Biker" />
+          <p class="footer__tagline">Escuela de Ciclismo Quines Biker. Planificación inteligente y seguimiento para
+            atletas de todos los niveles.</p>
+          <div class="footer__social">
+            <a class="footer__social-link footer__social-link--instagram" href="https://instagram.com/TU_USUARIO"
+              target="_blank" aria-label="Instagram">
+              📷
+            </a>
+            <a class="footer__social-link footer__social-link--whatsapp" href="https://wa.me/2664818711" target="_blank"
+              aria-label="WhatsApp">
+              💬
+            </a>
+            <a class="footer__social-link footer__social-link--mail" href="mailto:TU_EMAIL" aria-label="Email">
+              ✉️
+            </a>
+          </div>
+        </div>
+
+        <!-- Navegación -->
+        <div>
+          <div class="footer__nav-title">Navegación</div>
+          <ul class="footer__nav-list">
+            <li><a class="footer__nav-link" href="#niveles">Entrenar</a></li>
+            <li><a class="footer__nav-link" href="#presencial">Presencial</a></li>
+            <li><a class="footer__nav-link" href="#bikepark">Bike Park</a></li>
+            <li><a class="footer__nav-link" href="#planes">Planes</a></li>
+            <li><a class="footer__nav-link" href="#metodologia">Metodología</a></li>
+            <li><a class="footer__nav-link" href="#coach">El Coach</a></li>
+          </ul>
+        </div>
+
+        <!-- Pagos -->
+        <div>
+          <div class="footer__nav-title">Medios de pago</div>
+          <div class="footer__payments">
+            <span class="footer__payment-badge">Transferencia</span>
+            <span class="footer__payment-badge">MODO</span>
+            <span class="footer__payment-badge">Mercado Pago</span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer__divider" />
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Escuela de Ciclismo Quines Biker. Todos los derechos reservados.</p>
+        <p class="footer__credit">Diseño y desarrollo por <a href="https://gaboweb.com.ar" target="_blank">GaboWeb</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+     WHATSAPP FLOTANTE
+============================================================ -->
+  <div class="whatsapp-float">
+    <a class="whatsapp-float__btn"
+      href="https://wa.me/2664818711?text=Hola!%20Quiero%20saber%20más%20sobre%20Quines%20Biker" target="_blank"
+      aria-label="Contactar por WhatsApp">
+      <span class="whatsapp-float__pulse"></span>
+      <!-- Ícono SVG oficial de WhatsApp -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
+    </a>
+    <span class="whatsapp-float__tooltip">¡Hablemos!</span>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS -->
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+// ============================================================
+// _planes.scss — Quines Biker
+// Sección 5: Planes y precios
+// ============================================================
+
+@use 'variables' as *;
+
+.planes {
+  background-color: $color-bg;
+  padding: 5rem 0;
+
+  @media (min-width: 992px) {
+    padding: 7rem 0;
+  }
+
+  // ─── ENCABEZADO ─────────────────────────────────────────
+  &__header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-4xl;
+    line-height: $lh-tight;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: $fs-5xl;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-heading;
+    font-size: $fs-lg;
+    font-weight: $fw-regular;
+    color: $color-text-muted;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  // ─── GRID ───────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: stretch;
+    }
+  }
+
+  // ─── CARD BASE ──────────────────────────────────────────
+  &__card {
+    background: linear-gradient(145deg, $color-bg-card, rgba($color-primary, 0.08));
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: $transition-base;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    // ─── CARD PREMIUM (destacada) ─────────────────────────
+    &--premium {
+      border-color: rgba($color-accent, 0.35);
+      background: linear-gradient(145deg, $color-bg-card, rgba($color-accent, 0.06));
+      box-shadow: 0 8px 40px rgba($color-accent, 0.15);
+
+      &:hover {
+        box-shadow: $shadow-glow-orange;
+      }
+
+      // Línea superior naranja
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: $gradient-cta;
+      }
+    }
+  }
+
+  // Badge "Más elegido"
+  &__popular {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-xs;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: $gradient-cta;
+    color: #fff;
+    border-radius: $radius-pill;
+    padding: 0.25rem 1rem;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+  }
+
+  // Nombre del plan
+  &__plan-name {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-sm;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    margin-bottom: 0.75rem;
+  }
+
+  // Precio
+  &__price {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__price-currency {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-xl;
+    color: $color-text-muted;
+    line-height: 1;
+    padding-bottom: 0.4rem;
+  }
+
+  &__price-amount {
+    font-family: $font-display;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: $color-text;
+
+    .planes__card--premium & {
+      background: $gradient-cta;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__price-period {
+    font-family: $font-heading;
+    font-size: $fs-base;
+    color: $color-text-muted;
+    padding-bottom: 0.5rem;
+  }
+
+  &__price-note {
+    font-family: $font-body;
+    font-size: $fs-sm;
+    color: $color-text-muted;
+    margin-bottom: 1.75rem;
+  }
+
+  // Separador
+  &__divider {
+    border: none;
+    height: 1px;
+    background: $color-border;
+    margin-bottom: 1.75rem;
+  }
+
+  // Lista de features
+  &__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    flex-grow: 1;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-family: $font-body;
+    font-size: $fs-base;
+    color: $color-text-muted;
+    line-height: $lh-snug;
+  }
+
+  &__feature-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+    background: rgba($color-success, 0.15);
+    color: #4ade80;
+
+    .planes__card--premium & {
+      background: rgba($color-accent, 0.15);
+      color: #fb923c;
+    }
+  }
+
+  // Botón del plan
+  &__btn {
+    display: block;
+    width: 100%;
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-lg;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.85rem 1.5rem;
+    border-radius: $radius-pill;
+    border: none;
+    cursor: pointer;
+    transition: $transition-base;
+    text-decoration: none;
+
+    &--basico {
+      background: transparent;
+      color: $color-text;
+      border: 2px solid rgba($color-primary-light, 0.4);
+
+      &:hover {
+        border-color: $color-primary-light;
+        background: rgba($color-primary, 0.12);
+        color: $color-text;
+        transform: translateY(-2px);
+      }
+    }
+
+    &--premium {
+      background: $gradient-cta;
+      color: #fff;
+      box-shadow: $shadow-glow-orange;
+
+      &:hover {
+        box-shadow: 0 0 40px rgba($color-accent, 0.55);
+        transform: translateY(-2px);
+        color: #fff;
+      }
+    }
+  }
+
+  // ─── CTA PRESENCIAL ─────────────────────────────────────
+  &__presencial {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+
+    p {
+      font-family: $font-heading;
+      font-size: $fs-lg;
+      color: $color-text-muted;
+      margin-bottom: 1.25rem;
+    }
+  }
+}

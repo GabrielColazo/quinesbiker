@@ -1,0 +1,172 @@
+// ============================================================
+// _niveles.scss — Quines Biker
+// Sección 2: Niveles de entrenamiento
+// ============================================================
+
+@use 'variables' as *;
+
+.niveles {
+  background-color: $color-bg-section;
+  padding: 5rem 0;
+
+  @media (min-width: 992px) {
+    padding: 7rem 0;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: $fs-4xl;
+    line-height: $lh-tight;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: $fs-5xl;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-heading;
+    font-size: $fs-lg;
+    font-weight: $fw-regular;
+    color: $color-text-muted;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    background: linear-gradient(145deg, $color-bg-card, rgba($color-primary, 0.1));
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+    padding: 2rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: $transition-base;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      opacity: 0.12;
+      transition: $transition-slow;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+
+      &::before {
+        opacity: 0.22;
+        transform: scale(1.2);
+      }
+    }
+
+    &--inicial {
+      &::before { background: $color-success; }
+      .niveles__card-number { color: $color-success; }
+      .niveles__badge { background: rgba($color-success, 0.12); color: #4ade80; border-color: rgba($color-success, 0.3); }
+      &:hover { border-color: rgba($color-success, 0.3); box-shadow: 0 8px 32px rgba($color-success, 0.12); }
+    }
+
+    &--intermedio {
+      &::before { background: $color-secondary-light; }
+      .niveles__card-number { color: $color-secondary-light; }
+      .niveles__badge { background: rgba($color-secondary-light, 0.12); color: #60a5fa; border-color: rgba($color-secondary-light, 0.3); }
+      &:hover { border-color: rgba($color-secondary-light, 0.3); box-shadow: 0 8px 32px rgba($color-secondary-light, 0.12); }
+    }
+
+    &--pro {
+      border-color: rgba($color-accent, 0.2);
+      &::before { background: $color-accent; }
+      .niveles__card-number { color: $color-accent; }
+      .niveles__badge { background: rgba($color-accent, 0.12); color: #fb923c; border-color: rgba($color-accent, 0.3); }
+      &:hover { border-color: rgba($color-accent, 0.4); box-shadow: $shadow-glow-orange; }
+    }
+  }
+
+  &__badge {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-xs;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.85rem;
+    border-radius: $radius-pill;
+    border: 1px solid;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+  }
+
+  &__card-number {
+    font-family: $font-display;
+    font-size: 5rem;
+    line-height: 1;
+    opacity: 0.1;
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    transition: $transition-base;
+
+    .niveles__card:hover & {
+      opacity: 0.2;
+    }
+  }
+
+  &__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: $radius-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &__card-title {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-2xl;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+  }
+
+  &__card-text {
+    font-family: $font-body;
+    font-size: $fs-base;
+    color: $color-text-muted;
+    line-height: $lh-base;
+    margin-bottom: 0;
+  }
+
+  &__cta {
+    text-align: center;
+    margin-top: 3rem;
+
+    p {
+      font-family: $font-heading;
+      font-size: $fs-lg;
+      color: $color-text-muted;
+      margin-bottom: 1.25rem;
+    }
+  }
+}
