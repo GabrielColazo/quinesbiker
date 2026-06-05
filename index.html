@@ -23,6 +23,8 @@
 
   <!-- CSS compilado -->
   <link rel="stylesheet" href="./assets/css/main.css" />
+  <!-- Favicon Principal -->
+<link rel="icon" type="image/png" href="./assets/img/favicon.ico">
 </head>
 
 
@@ -77,15 +79,10 @@
   </nav>
 
 
-  <!-- ============================================================
-        HERO
-  ============================================================ -->
-  <!-- ============================================================
-        HERO
-  ============================================================ -->
+  <!--HERO-->
+  
   <section class="hero" id="inicio">
 
-    <!-- Fondo con imagen + overlay -->
     <div class="hero__bg"></div>
 
     <div class="container">
@@ -93,39 +90,32 @@
         <div class="col-12 col-md-10 col-lg-8 col-xl-7">
           <div class="hero__content">
 
-            <!-- Badge -->
             <span class="hero__badge">Escuela de Ciclismo · Quines Biker</span>
 
-            <!-- Título H1 -->
             <h1 class="hero__title">
               Alcanzá tu<br />
               <span>máximo rendimiento</span><br />
               sobre la bici.
             </h1>
             
-            <!-- Subtítulo -->
             <p class="hero__subtitle">
               Planificación inteligente, técnica y seguimiento para atletas de todos los niveles. Coaching a distancia y
               clases presenciales con circuito propio.
             </p>
 
-            <!-- Botones (Optimizados para Scroll Interno) -->
             <div class="hero__actions d-flex flex-wrap gap-3 mt-4">
               
-              <!-- BOTÓN PRINCIPAL (Ancla interna a la sección de inscripción) -->
               <a href="#inscripcion" 
                  class="btn navbar-cta px-4 py-2 fs-base d-inline-flex align-items-center justify-content-center">
                 Inscribirme Ahora <i class="bi bi-arrow-right ms-2"></i>
               </a>
 
-              <!-- BOTÓN SECUNDARIO (Ancla interna a la Tira de Fotos) -->
               <a href="#galeria" class="btn-brand btn-brand--ghost px-4 py-2 fs-base text-uppercase fw-semibold d-inline-flex align-items-center justify-content-center" style="letter-spacing: 0.08em;">
                 Conocer el Bike Park
               </a>
 
             </div>
 
-            <!-- Stats -->
             <div class="hero__stats">
               <div class="hero__stat">
                 <span class="hero__stat-number">3</span>
@@ -146,7 +136,8 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
+    <img src="./assets/img/logodefinitivo.webp" alt="Logo Quines Biker" class="hero__logo-floating" />
+
     <div class="hero__scroll">
       <span>Scroll</span>
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -641,12 +632,12 @@
         <!-- Contenedor de las tarjetas correderas -->
         <div class="carousel-inner">
 
-          <!-- COACH 1: MARCELO FLORIANI -->
+          <!-- COACH 1: MARCELO ENRIQUE FLORIANI -->
           <div class="carousel-item active">
             <div class="coach__inner">
               <!-- Reemplazá el bloque de la foto 1 por esto: -->
               <div class="coach__photo-wrap">
-                <img class="coach__photo" src="./assets/img/Marcelo Enrique Floriani.webp"
+                <img class="coach__photo" src="./assets/img/Marcelo Floriani.webp"
                   alt="Marcelo Floriani - Coach Quines Biker" />
                 <div class="coach__photo-deco"></div>
                 <div class="coach__photo-badge">
@@ -661,7 +652,7 @@
               <!-- Contenido Coach 1 -->
               <div class="coach__content">
                 <div>
-                  <div class="coach__name">Marcelo Floriani</div>
+                  <div class="coach__name">Marcelo Enrique Floriani</div>
                   <div class="coach__role">Coach de MTB & Co-Fundador</div>
                 </div>
                 <div class="coach__quote">
@@ -701,12 +692,12 @@
             </div>
           </div>
 
-          <!-- COACH 2: LUIS FLORIANI -->
+          <!-- COACH 2: LUIS MARCELO FLORIANI -->
           <div class="carousel-item">
             <div class="coach__inner">
               <!-- Reemplazá el bloque de la foto 2 por esto: -->
               <div class="coach__photo-wrap">
-                <img class="coach__photo" src="./assets/img/Luis Marcelo Floriani.webp"
+                <img class="coach__photo" src="./assets/img/Luis Floriani.webp"
                   alt="Luis Floriani - Atleta de Élite Quines Biker" />
                 <div class="coach__photo-deco"></div>
                 <div class="coach__photo-badge">
@@ -721,7 +712,7 @@
               <!-- Contenido Coach 2 -->
               <div class="coach__content">
                 <div>
-                  <div class="coach__name">Luis Floriani</div>
+                  <div class="coach__name">Luis Marcelo Floriani</div>
                   <div class="coach__role">Atleta de Élite & Coach Deportivo</div>
                 </div>
                 <div class="coach__quote">
@@ -846,67 +837,65 @@
   <!-- ============================================================
      FOOTER
 ============================================================ -->
-  <footer class="footer">
-    <div class="container">
+<footer class="footer">
+  <div class="container footer__container">
 
-      <div class="footer__main">
+    <div class="footer__main">
 
-        <!-- Brand -->
-        <div class="footer__brand">
-          <img class="footer__logo" src="./assets/img/logo.png" alt="Quines Biker" />
-          <p class="footer__tagline">Escuela de Ciclismo Quines Biker. Planificación inteligente y seguimiento para
-            atletas de todos los niveles.</p>
-          <div class="footer__social">
-            <a class="footer__social-link footer__social-link--instagram" href="https://instagram.com/TU_USUARIO"
-              target="_blank" aria-label="Instagram">
-              📷
-            </a>
-            <a class="footer__social-link footer__social-link--whatsapp" href="https://wa.me/2664818711" target="_blank"
-              aria-label="WhatsApp">
-              💬
-            </a>
-            <a class="footer__social-link footer__social-link--mail" href="mailto:TU_EMAIL" aria-label="Email">
-              ✉️
-            </a>
-          </div>
+      <!-- Brand -->
+      <div class="footer__brand">
+        <img class="footer__logo" src="./assets/img/logodefinitivo.webp" alt="Quines Biker" />
+        <p class="footer__tagline">
+          Escuela de Ciclismo Quines Biker. Planificación inteligente, técnica y seguimiento para atletas de todos los niveles.
+        </p>
+        <div class="footer__social">
+          <a class="footer__social-link footer__social-link--instagram" href="https://instagram.com/TU_USUARIO" target="_blank" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a class="footer__social-link footer__social-link--whatsapp" href="https://wa.me/2664818711" target="_blank" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <a class="footer__social-link footer__social-link--mail" href="mailto:TU_EMAIL" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
         </div>
-
-        <!-- Navegación -->
-        <div>
-          <div class="footer__nav-title">Navegación</div>
-          <ul class="footer__nav-list">
-            <li><a class="footer__nav-link" href="#niveles">Entrenar</a></li>
-            <li><a class="footer__nav-link" href="#presencial">Presencial</a></li>
-            <li><a class="footer__nav-link" href="#bikepark">Bike Park</a></li>
-            <li><a class="footer__nav-link" href="#planes">Planes</a></li>
-            <li><a class="footer__nav-link" href="#metodologia">Metodología</a></li>
-            <li><a class="footer__nav-link" href="#coach">El Coach</a></li>
-          </ul>
-        </div>
-
-        <!-- Pagos -->
-        <div>
-          <div class="footer__nav-title">Medios de pago</div>
-          <div class="footer__payments">
-            <span class="footer__payment-badge">Transferencia</span>
-            <span class="footer__payment-badge">MODO</span>
-            <span class="footer__payment-badge">Mercado Pago</span>
-          </div>
-        </div>
-
       </div>
 
-      <hr class="footer__divider" />
+      <!-- Navegación Horizontal y Pagos Integrados -->
+      <div class="footer__nav">
+        <ul class="footer__nav-list list-unstyled">
+          <li><a class="footer__nav-link" href="#inicio">Inicio</a></li>
+          <li><a class="footer__nav-link" href="#niveles">Entrenar</a></li>
+          <li><a class="footer__nav-link" href="#presencial">Presencial</a></li>
+          <li><a class="footer__nav-link" href="#bikepark">Bike Park</a></li>
+          <li><a class="footer__nav-link" href="#planes">Planes</a></li>
+          <li><a class="footer__nav-link" href="#metodologia">Metodología</a></li>
+          <li><a class="footer__nav-link" href="#galeria">Galería</a></li>
+          <li><a class="footer__nav-link" href="#inscripcion">Inscripción</a></li>
+          <li><a class="footer__nav-link" href="#coach">Staff</a></li>
+        </ul>
 
-      <div class="footer__bottom">
-        <p class="footer__copy">© 2026 Escuela de Ciclismo Quines Biker. Todos los derechos reservados.</p>
-        <p class="footer__credit">Diseño y desarrollo por <a href="https://gaboweb.com.ar" target="_blank">GaboWeb</a>
-        </p>
+        <div class="footer__payments">
+          <span class="footer__payment-badge">Transferencia</span>
+          <span class="footer__payment-badge">MODO</span>
+          <span class="footer__payment-badge">Mercado Pago</span>
+        </div>
       </div>
 
     </div>
-  </footer>
 
+    <hr class="footer__divider" />
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Escuela de Ciclismo Quines Biker. Todos los derechos reservados.</p>
+       <p class="footer__credit">
+  Diseño y desarrollo por <a href="https://gaboweb.com.ar">GaboWeb<span class="light-line"></span></a>
+</p>
+   
+    </div>
+
+  </div>
+</footer>
 
   <!-- ============================================================
      WHATSAPP FLOTANTE
