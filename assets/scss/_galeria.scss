@@ -1,0 +1,149 @@
+/* ==========================================================================
+   COMPONENT: GALERÍA EN TIRA HORIZONTAL
+   ========================================================================== */
+
+.galeria-tira {
+  padding: 60px 0;
+  overflow: hidden; 
+
+  &__scroll {
+    display: flex;
+    gap: 20px; 
+    overflow-x: auto; 
+    padding-bottom: 20px; 
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory; 
+
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 255, 102, 0.4); // Ajustar al color de acento de tu UI
+      border-radius: 10px;
+      &:hover {
+        background: rgba(0, 255, 102, 0.8);
+      }
+    }
+  }
+
+  &__item {
+    flex: 0 0 300px; 
+    scroll-snap-align: start; 
+    position: relative;
+    aspect-ratio: 4 / 3; 
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+
+      .galeria-tira__img { transform: scale(1.05); }
+      .galeria-tira__overlay { opacity: 1; }
+      .galeria-tira__icon {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    transition: opacity 0.3s ease;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    color: #00ff66; 
+    font-size: 1.8rem;
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria-tira {
+    &__item {
+      flex: 0 0 260px; 
+      &:hover {
+        transform: none;
+        .galeria-tira__img { transform: none; }
+      }
+    }
+  }
+}
+
+// Agregar esto adentro o al final de .galeria-tira en tu archivo SCSS
+.galeria-tira {
+  // ... (lo que ya tenías)
+
+  // Estilos base para los botones flotantes
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(11, 12, 16, 0.85); // Fondo oscuro traslúcido
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #00ff66; // Tu color de énfasis deportivo
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: #00ff66;
+      color: #0b0c10;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    // Posicionamiento quirúrgico de cada flecha
+    &--prev {
+      left: -5px;
+    }
+
+    &--next {
+      right: -5px;
+    }
+  }
+}
+
+// Ocultamos las flechas en celulares para limpiar la interfaz táctil
+@media (max-width: 768px) {
+  .galeria-tira {
+    &__btn {
+      display: none; // En mobile el usuario usa el dedo intuitivamente
+    }
+  }
+}

@@ -1,5 +1,5 @@
 // ============================================================
-// _navbar.scss — Quines Biker
+// _navbar.scss — Quines Biker (Optimizado para 7 Links)
 // ============================================================
 
 @use 'variables' as *;
@@ -48,7 +48,6 @@
   transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
   z-index: $z-fixed;
 
-  // Estado scrolled — se activa con JS
   &.scrolled {
     background-color: rgba($color-bg, 0.95);
     backdrop-filter: blur(12px);
@@ -66,11 +65,11 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba($color-text, 0.8) !important;
-  padding: 0.4rem 1rem !important;
+  padding: 0.4rem 1rem !important; // Padding estándar para pantallas grandes (+1200px)
   position: relative;
   transition: $transition-base;
+  white-space: nowrap; // Evita que "Bike Park" o "Empezar a Entrenar" se rompan en dos líneas
 
-  // Línea animada bajo el link
   &::after {
     content: '';
     position: absolute;
@@ -107,9 +106,10 @@
   padding: 0.45rem 1.4rem !important;
   transition: $transition-base;
   box-shadow: 0 0 16px rgba($color-accent, 0.3);
+  white-space: nowrap;
 
   &::after {
-    display: none; // Sin línea animada en el CTA
+    display: none;
   }
 
   &:hover {
@@ -136,6 +136,31 @@
   }
 }
 
+// ─── RESPONSIVE: AJUSTE QUIRÚRGICO DE ESCRITORIO MEDIANO ────
+// Se activa en PC normales y Notebooks donde los 7 links suelen amontonarse
+@media (min-width: 992px) and (max-width: 1200px) {
+  .navbar-brand {
+    &__text {
+      font-size: 1.2rem; // Achica sutilmente el logo
+    }
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.85rem; // Baja la tipografía de los links para ganar espacio
+    padding: 0.4rem 0.5rem !important; // Reduce el espaciado horizontal a la mitad
+
+    &::after {
+      left: 0.5rem;
+      right: 0.5rem; // Ajusta la línea animada al nuevo ancho
+    }
+  }
+
+  .navbar-cta {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem !important; // Hace el botón un toque más compacto
+  }
+}
+
 // ─── MENÚ MOBILE ────────────────────────────────────────────
 @media (max-width: 991.98px) {
   .navbar-collapse {
@@ -150,6 +175,7 @@
 
   .navbar-nav .nav-link {
     padding: 0.65rem 1rem !important;
+    font-size: $fs-base; // En mobile vuelve a su tamaño cómodo para el dedo
 
     &::after {
       display: none;
