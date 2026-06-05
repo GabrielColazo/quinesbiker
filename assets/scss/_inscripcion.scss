@@ -1,0 +1,67 @@
+/* ==========================================================================
+   COMPONENT: SECCIÓN LLAMADO A LA ACCIÓN (INSCRIPCIÓN)
+   ========================================================================== */
+
+@use 'variables' as *;
+
+.inscripcion-cta {
+  background-color: #0b0c10; // Tu fondo oscuro profundo
+  position: relative;
+  overflow: hidden;
+
+  &__badge {
+    color: #00ff66; // Color de acento flúor
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-sm;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1.1;
+
+    .text-accent {
+      color: #00ff66;
+    }
+  }
+
+  &__text {
+    color: #a3a8b4;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  &__btn {
+    padding: 0.75rem 2rem !important; // Un toque más grande que el del navbar
+    font-size: $fs-base;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+      transition: transform 0.25s ease;
+    }
+
+    &:hover i {
+      transform: translateX(4px); // Animación sutil de la flecha
+    }
+  }
+}
+
+// Ajuste responsivo para pantallas chicas
+@media (max-width: 576px) {
+  .inscripcion-cta {
+    &__title {
+      font-size: 2.5rem;
+    }
+    &__text {
+      font-size: 1rem;
+    }
+  }
+}
