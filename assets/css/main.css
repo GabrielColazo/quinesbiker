@@ -1450,6 +1450,31 @@ section {
   max-width: 580px;
   margin: 0 auto;
 }
+.metodologia__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 3rem; /* Separación perfecta con el header y el body */
+  max-width: 500px; /* Evita que se pixele o agrande de más */
+  padding: 0 1.25rem;
+}
+.metodologia__image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 16px; /* Sigue la consistencia de tus tarjetas */
+  opacity: 0.85; /* Se integra sutilmente al fondo oscuro */
+  filter: drop-shadow(0 0 15px rgba(107, 33, 168, 0.15));
+  transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+  animation: flotarEfecto 4s ease-in-out infinite;
+}
+.metodologia__image:hover {
+  opacity: 1;
+  transform: scale(1.02); /* Pequeño escalado premium */
+  filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.3)); /* Resplandor más vivo */
+  cursor: pointer;
+}
 .metodologia__body {
   max-width: 680px;
   margin: 0 auto 3.5rem;
@@ -1580,6 +1605,14 @@ section {
   margin-bottom: 0;
 }
 
+@keyframes flotarEfecto {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px); /* Va a balancearse arriba y abajo de forma súper fluida */
+  }
+}
 .coach {
   background-color: #0A0614;
   padding: 5rem 0 6rem 0;
