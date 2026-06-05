@@ -347,17 +347,23 @@ section {
 }
 
 .navbar-quines {
-  background-color: transparent;
+  background-color: transparent !important;
   padding: 1rem 0;
   transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
   z-index: 200;
 }
+.navbar-quines:hover {
+  background-color: transparent !important;
+}
 .navbar-quines.scrolled {
-  background-color: rgba(10, 6, 20, 0.95);
+  background-color: rgba(10, 6, 20, 0.95) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 0.5rem 0;
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+}
+.navbar-quines.scrolled:hover {
+  background-color: rgba(10, 6, 20, 0.95) !important;
 }
 
 .navbar-nav .nav-link {

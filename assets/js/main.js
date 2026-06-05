@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const contenedor = document.getElementById('contenedorGaleria');
+  const contenedor = document.getElementById('contenedorGelaria'); // Nota: asegurate si es contenedorGaleria o contenedorGelaria en tu HTML
+  const contenedorReal = contenedor || document.getElementById('contenedorGaleria');
   const btnPrev = document.getElementById('btnGaleriaPrev');
   const btnNext = document.getElementById('btnGaleriaNext');
   const galeriaModal = document.getElementById('galeriaModal');
   const modalImg = document.getElementById('modalGaleriaImg');
   
-  // 1. Generar las 33 imágenes automáticamente
-  if (contenedor) {
+  // ============================================================
+  // 1. GENERAR LAS 33 IMÁGENES AUTOMÁTICAMENTE
+  // ============================================================
+  if (contenedorReal) {
     let htmlContenido = '';
     for (let i = 1; i <= 33; i++) {
       htmlContenido += `
@@ -18,31 +21,88 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     }
-    contenedor.innerHTML = htmlContenido;
+    contenedorReal.innerHTML = htmlContenido;
   }
 
-  // 2. Lógica de las flechas de navegación (PC)
-  if (btnPrev && btnNext && contenedor) {
-    const calcularDesplazamiento = () => contenedor.clientWidth / 1.5;
+  // ============================================================
+  // 2. LÓGICA DE LAS FLECHAS DE NAVEGACIÓN (PC)
+  // ============================================================
+  if (btnPrev && btnNext && contenedorReal) {
+    const calcularDesplazamiento = () => contenedorReal.clientWidth / 1.5;
 
     btnNext.addEventListener('click', () => {
-      contenedor.scrollBy({ left: calcularDesplazamiento(), behavior: 'smooth' });
+      contenedorReal.scrollBy({ left: calcularDesplazamiento(), behavior: 'smooth' });
     });
 
     btnPrev.addEventListener('click', () => {
-      contenedor.scrollBy({ left: -calcularDesplazamiento(), behavior: 'smooth' });
+      contenedorReal.scrollBy({ left: -calcularDesplazamiento(), behavior: 'smooth' });
     });
   }
 
-  // 3. Lógica dinámica del Modal
+  // ============================================================
+  // 3. LÓGICA DINÁMICA DEL MODAL (VERSIÓN SEGURA NATIVA)
+  // ============================================================
   if (galeriaModal && modalImg) {
     galeriaModal.addEventListener('show.bs.modal', (event) => {
       const tarjetaClickada = event.relatedTarget;
-      const srcImg = tarjetaClickada.querySelector('.galeria-tira__img').getAttribute('src');
-      const altImg = tarjetaClickada.querySelector('.galeria-tira__img').getAttribute('alt');
+      const imagenInterna = tarjetaClickada.querySelector('.galeria-tira__img');
       
-      modalImg.setAttribute('src', srcImg);
-      modalImg.setAttribute('alt', altImg);
+      if (imagenInterna) {
+        // Copia la ruta exacta resuelta que ya se ve bien en la tira
+        modalImg.src = imagenInterna.src;
+        modalImg.alt = imagenInterna.alt;
+      }
+    });
+  }
+
+  // ============================================================
+  // 4. CONTROL DEL SCROLL DE LA NAVBAR (Evita parpadeos)
+  // ============================================================
+  const navbar = document.querySelector('.navbar-quines');
+  
+  if (navbar) {
+    const controlarNavbar = () => {
+      if (window.scrollY > 50) {
+        if (!navbar.classList.contains('scrolled')) {
+          navbar.classList.add('scrolled');
+        }
+      } else {
+        if (navbar.classList.contains('scrolled')) {
+          navbar.classList.remove('scrolled');
+        }
+      }
+    };
+
+    // Ejecuta al mover el scroll
+    window.addEventListener('scroll', controlarNavbar);
+    // Ejecuta una vez al cargar por si el usuario actualizó la página abajo
+    controlarNavbar();
+  }
+
+  // ============================================================
+  // 5. CERRAR MENÚ HAMBURGUESA AL TOCAR AFUERA (Mobile)
+  // ============================================================
+  const navbarCollapse = document.getElementById('navMenu');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+
+  if (navbarCollapse && navbarToggler) {
+    document.addEventListener('click', (event) => {
+      // Verificamos si el menú móvil está desplegado
+      const menuEstaAbierto = navbarCollapse.classList.contains('show');
+      
+      // Verificamos si el click fue fuera del botón hamburguesa y del menú desplegable
+      const clickAdentroDelMenu = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+
+      if (menuEstaAbierto && !clickAdentroDelMenu) {
+        // Si Bootstrap está cargado de forma global, usamos su método nativo para cerrarlo sin romper nada
+        if (window.bootstrap && window.bootstrap.Collapse) {
+          const instance = window.bootstrap.Collapse.getInstance(navbarCollapse) || new window.bootstrap.Collapse(navbarCollapse, { toggle: false });
+          instance.hide();
+        } else {
+          // Si no, un click virtual en el botón de la hamburguesa lo cierra al instante
+          navbarToggler.click();
+        }
+      }
     });
   }
 });

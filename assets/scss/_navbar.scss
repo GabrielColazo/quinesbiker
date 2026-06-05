@@ -1,5 +1,5 @@
 // ============================================================
-// _navbar.scss — Quines Biker (Optimizado para 7 Links)
+// _navbar.scss — Quines Biker (Solución de Fondo Fijo)
 // ============================================================
 
 @use 'variables' as *;
@@ -41,19 +41,30 @@
   }
 }
 
-// ─── NAVBAR ─────────────────────────────────────────────────
+// ─── NAVBAR (Con corrección de parpadeo) ────────────────────
 .navbar-quines {
-  background-color: transparent;
+  background-color: transparent !important; // Fuerza transparencia total arriba de todo
   padding: 1rem 0;
   transition: background-color 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
   z-index: $z-fixed;
 
+  // Evita que cualquier hover del mouse altere la barra inicial
+  &:hover {
+    background-color: transparent !important;
+  }
+
+  // Estado scrolled — Se activa con JS al bajar el scroll
   &.scrolled {
-    background-color: rgba($color-bg, 0.95);
+    background-color: rgba($color-bg, 0.95) !important; // Mantiene el color sólido oscuro
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 0.5rem 0;
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+
+    // FIX CRÍTICO: Bloquea el fondo para que no parpadee al mover el cursor por encima
+    &:hover {
+      background-color: rgba($color-bg, 0.95) !important;
+    }
   }
 }
 
@@ -65,10 +76,10 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba($color-text, 0.8) !important;
-  padding: 0.4rem 1rem !important; // Padding estándar para pantallas grandes (+1200px)
+  padding: 0.4rem 1rem !important; 
   position: relative;
   transition: $transition-base;
-  white-space: nowrap; // Evita que "Bike Park" o "Empezar a Entrenar" se rompan en dos líneas
+  white-space: nowrap; 
 
   &::after {
     content: '';
@@ -136,28 +147,27 @@
   }
 }
 
-// ─── RESPONSIVE: AJUSTE QUIRÚRGICO DE ESCRITORIO MEDIANO ────
-// Se activa en PC normales y Notebooks donde los 7 links suelen amontonarse
+// ─── RESPONSIVE: AJUSTE DE ESCRITORIO MEDIANO (NOTEBOOKS) ───
 @media (min-width: 992px) and (max-width: 1200px) {
   .navbar-brand {
     &__text {
-      font-size: 1.2rem; // Achica sutilmente el logo
+      font-size: 1.2rem;
     }
   }
 
   .navbar-nav .nav-link {
-    font-size: 0.85rem; // Baja la tipografía de los links para ganar espacio
-    padding: 0.4rem 0.5rem !important; // Reduce el espaciado horizontal a la mitad
+    font-size: 0.85rem; 
+    padding: 0.4rem 0.5rem !important; 
 
     &::after {
       left: 0.5rem;
-      right: 0.5rem; // Ajusta la línea animada al nuevo ancho
+      right: 0.5rem; 
     }
   }
 
   .navbar-cta {
     font-size: 0.8rem;
-    padding: 0.4rem 1rem !important; // Hace el botón un toque más compacto
+    padding: 0.4rem 1rem !important; 
   }
 }
 
@@ -175,7 +185,7 @@
 
   .navbar-nav .nav-link {
     padding: 0.65rem 1rem !important;
-    font-size: $fs-base; // En mobile vuelve a su tamaño cómodo para el dedo
+    font-size: $fs-base; 
 
     &::after {
       display: none;
