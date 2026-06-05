@@ -1,11 +1,12 @@
 /* ==========================================================================
-   COMPONENT: GALERÍA EN TIRA HORIZONTAL
+   COMPONENT: GALERÍA EN TIRA HORIZONTAL & MODAL COMPACTO
    ========================================================================== */
 
 .galeria-tira {
   padding: 60px 0;
   overflow: hidden; 
 
+  // Contenedor del scroll horizontal
   &__scroll {
     display: flex;
     gap: 20px; 
@@ -22,7 +23,7 @@
       border-radius: 10px;
     }
     &::-webkit-scrollbar-thumb {
-      background: rgba(0, 255, 102, 0.4); // Ajustar al color de acento de tu UI
+      background: rgba(0, 255, 102, 0.4); 
       border-radius: 10px;
       &:hover {
         background: rgba(0, 255, 102, 0.8);
@@ -30,6 +31,7 @@
     }
   }
 
+  // Tarjeta individual
   &__item {
     flex: 0 0 300px; 
     scroll-snap-align: start; 
@@ -45,7 +47,6 @@
 
     &:hover {
       transform: translateY(-4px);
-
       .galeria-tira__img { transform: scale(1.05); }
       .galeria-tira__overlay { opacity: 1; }
       .galeria-tira__icon {
@@ -84,25 +85,8 @@
     opacity: 0;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
   }
-}
 
-@media (max-width: 768px) {
-  .galeria-tira {
-    &__item {
-      flex: 0 0 260px; 
-      &:hover {
-        transform: none;
-        .galeria-tira__img { transform: none; }
-      }
-    }
-  }
-}
-
-// Agregar esto adentro o al final de .galeria-tira en tu archivo SCSS
-.galeria-tira {
-  // ... (lo que ya tenías)
-
-  // Estilos base para los botones flotantes
+  // Botones flotantes (PC)
   &__btn {
     position: absolute;
     top: 50%;
@@ -111,9 +95,9 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: rgba(11, 12, 16, 0.85); // Fondo oscuro traslúcido
+    background-color: rgba(11, 12, 16, 0.85); 
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #00ff66; // Tu color de énfasis deportivo
+    color: #00ff66; 
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -128,22 +112,46 @@
       transform: translateY(-50%) scale(1.1);
     }
 
-    // Posicionamiento quirúrgico de cada flecha
-    &--prev {
-      left: -5px;
+    &--prev { left: -5px; }
+    &--next { right: -5px; }
+  }
+
+  // Control estético del modal contenido
+  &__modal {
+    background-color: rgba(11, 12, 16, 0.85); 
+    backdrop-filter: blur(4px);
+
+    &-img {
+      max-width: 100%;
+      max-height: 70vh; // Limita el alto para que la foto quede compacta y elegante
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     }
 
-    &--next {
-      right: -5px;
+    .btn-close-white {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 12px;
+      border-radius: 50%;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: #00ff66;
+      }
     }
   }
 }
 
-// Ocultamos las flechas en celulares para limpiar la interfaz táctil
+// Responsive Computadoras Chicas / Mobile
 @media (max-width: 768px) {
   .galeria-tira {
-    &__btn {
-      display: none; // En mobile el usuario usa el dedo intuitivamente
+    &__btn { display: none; } // Oculta flechas en pantallas táctiles
+    &__item {
+      flex: 0 0 260px; 
+      &:hover {
+        transform: none;
+        .galeria-tira__img { transform: none; }
+      }
     }
   }
 }
