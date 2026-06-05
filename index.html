@@ -78,13 +78,15 @@
 
 
   <!-- ============================================================
-       HERO
+        HERO
+  ============================================================ -->
+  <!-- ============================================================
+        HERO
   ============================================================ -->
   <section class="hero" id="inicio">
 
     <!-- Fondo con imagen + overlay -->
     <div class="hero__bg"></div>
-
 
     <div class="container">
       <div class="row">
@@ -100,20 +102,27 @@
               <span>máximo rendimiento</span><br />
               sobre la bici.
             </h1>
+            
             <!-- Subtítulo -->
             <p class="hero__subtitle">
               Planificación inteligente, técnica y seguimiento para atletas de todos los niveles. Coaching a distancia y
               clases presenciales con circuito propio.
             </p>
 
-            <!-- Botones -->
-            <div class="hero__actions">
-              <a href="#planes" class="btn-brand btn-brand--primary">
-                Empezar a Entrenar
+            <!-- Botones (Optimizados para Scroll Interno) -->
+            <div class="hero__actions d-flex flex-wrap gap-3 mt-4">
+              
+              <!-- BOTÓN PRINCIPAL (Ancla interna a la sección de inscripción) -->
+              <a href="#inscripcion" 
+                 class="btn navbar-cta px-4 py-2 fs-base d-inline-flex align-items-center justify-content-center">
+                Inscribirme Ahora <i class="bi bi-arrow-right ms-2"></i>
               </a>
-              <a href="#bikepark" class="btn-brand btn-brand--ghost">
+
+              <!-- BOTÓN SECUNDARIO (Ancla interna a la Tira de Fotos) -->
+              <a href="#galeria" class="btn-brand btn-brand--ghost px-4 py-2 fs-base text-uppercase fw-semibold d-inline-flex align-items-center justify-content-center" style="letter-spacing: 0.08em;">
                 Conocer el Bike Park
               </a>
+
             </div>
 
             <!-- Stats -->
@@ -146,7 +155,6 @@
     </div>
 
   </section>
-
 
   <!-- ============================================================
        NIVELES

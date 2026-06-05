@@ -1,5 +1,5 @@
 // ============================================================
-// _hero.scss — Quines Biker
+// _hero.scss — Quines Biker (Optimizado para Conversión)
 // ============================================================
 
 @use 'variables' as *;
@@ -119,13 +119,33 @@
     }
   }
 
-  // Botones
+  // Contenedor de Botones (Adaptado para combinar Bootstrap + BEM)
   &__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
     margin-bottom: 3rem;
+
+    // Aseguramos que la flecha del botón principal se anime con tu transición base
+    .navbar-cta {
+      font-family: $font-heading;
+      font-weight: $fw-bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: $radius-pill;
+      box-shadow: 0 0 16px rgba($color-accent, 0.3);
+      transition: $transition-base;
+
+      i {
+        transition: transform 0.2s ease;
+      }
+
+      &:hover {
+        box-shadow: $shadow-glow-orange;
+        transform: translateY(-2px);
+
+        i {
+          transform: translateX(4px); // Desplaza sutilmente la flechita a la derecha
+        }
+      }
+    }
   }
 
   // Stats
