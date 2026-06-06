@@ -1539,10 +1539,12 @@ section {
 }
 .metodologia__image-container {
   display: flex;
+  flex-direction: column; /* Fuerza a que la segunda imagen se posicione abajo */
+  gap: 1.75rem; /* Controla la separación vertical entre ambas imágenes */
   justify-content: center;
   align-items: center;
   margin: 2rem auto 3rem; /* Separación perfecta con el header y el body */
-  max-width: 500px; /* Evita que se pixele o agrande de más */
+  max-width: 500px; /* Evita que se pixelen o agranden de más */
   padding: 0 1.25rem;
 }
 .metodologia__image {
@@ -1555,6 +1557,9 @@ section {
   filter: drop-shadow(0 0 15px rgba(107, 33, 168, 0.15));
   transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
   animation: flotarEfecto 4s ease-in-out infinite;
+}
+.metodologia__image:nth-child(2) {
+  animation-delay: -2s;
 }
 .metodologia__image:hover {
   opacity: 1;
@@ -1607,16 +1612,6 @@ section {
   background: rgba(107, 33, 168, 0.1);
   border-color: rgba(147, 51, 234, 0.25);
   transform: translateY(-2px);
-}
-.metodologia__platform-icon {
-  font-size: 1.25rem;
-}
-.metodologia__platform-name {
-  font-family: "Rajdhani", sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  color: #F8FAFC;
-  letter-spacing: 0.02em;
 }
 .metodologia__steps {
   display: grid;
@@ -1697,7 +1692,7 @@ section {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px); /* Va a balancearse arriba y abajo de forma súper fluida */
+    transform: translateY(-6px);
   }
 }
 /* ==========================================================================

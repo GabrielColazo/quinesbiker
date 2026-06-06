@@ -40,16 +40,19 @@
     margin: 0 auto;
   }
 
-  // ─── IMAGEN DESTACADA (TRAININGPEAKS) ───────────────────
+  // ─── CONTENEDOR DE IMÁGENES (OPTIMIZADO PARA DOS IMÁGENES) ───
   &__image-container {
     display: flex;
+    flex-direction: column;   /* Fuerza a que la segunda imagen se posicione abajo */
+    gap: 1.75rem;             /* Controla la separación vertical entre ambas imágenes */
     justify-content: center;
     align-items: center;
-    margin: 2rem auto 3rem; /* Separación perfecta con el header y el body */
-    max-width: 500px;            /* Evita que se pixele o agrande de más */
+    margin: 2rem auto 3rem;   /* Separación perfecta con el header y el body */
+    max-width: 500px;         /* Evita que se pixelen o agranden de más */
     padding: 0 1.25rem;
   }
 
+  // ─── ESTILO DE LAS IMÁGENES ─────────────────────────────
   &__image {
     width: 100%;
     height: auto;
@@ -63,8 +66,13 @@
     // Usamos tu variable de transición para que todo responda igual de fluido
     transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
     
-    // Animación de flotado suave para darle vida a la pantalla
+    // Animación de flotado suave base
     animation: flotarEfecto 4s ease-in-out infinite;
+
+    // EFECTO DESFASAJE: Hace que la segunda imagen flote a destiempo para un look más orgánico
+    &:nth-child(2) {
+      animation-delay: -2s; 
+    }
 
     &:hover {
       opacity: 1;
@@ -127,18 +135,6 @@
       border-color: rgba($color-primary-light, 0.25);
       transform: translateY(-2px);
     }
-  }
-
-  &__platform-icon {
-    font-size: 1.25rem;
-  }
-
-  &__platform-name {
-    font-family: $font-heading;
-    font-weight: $fw-bold;
-    font-size: $fs-base;
-    color: $color-text;
-    letter-spacing: 0.02em;
   }
 
   // ─── PASOS / PROCESO ────────────────────────────────────
@@ -228,6 +224,6 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px); /* Va a balancearse arriba y abajo de forma súper fluida */
+    transform: translateY(-6px);
   }
 }
