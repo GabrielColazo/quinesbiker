@@ -98,47 +98,51 @@
     margin: 0 auto;
   }
 
-  // ─── IMAGEN PRINCIPAL ───────────────────────────────────
+  // ─── CONTENEDOR DE GEOLOCALIZACIÓN (CON DESTELLO PREMIUM) ───
   &__visual {
     position: relative;
     z-index: 1;
     border-radius: $radius-xl;
     overflow: hidden;
     margin-bottom: 2.5rem;
-    aspect-ratio: 16/7;
-    background: linear-gradient(135deg, $color-bg-card, rgba($color-primary-dark, 0.6));
+    background: $color-bg-card;
+    border: 1px solid rgba($color-border, 0.5);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
 
     @media (min-width: 992px) {
       margin-bottom: 0;
-      aspect-ratio: 4/3;
     }
 
-    img {
+    iframe {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       display: block;
+      filter: grayscale(0.4) invert(0.9) contrast(1.1) hue-rotate(180deg);
     }
 
-    // Overlay degradado sobre imagen
-    &::after {
+    &:hover {
+      transform: translateY(-4px);
+      border-color: $color-accent;
+      box-shadow: 0 0 0 1px rgba($color-accent, 0.2), 
+                  0 12px 30px rgba($color-accent, 0.25), 
+                  0 0 50px rgba($color-accent, 0.1);
+    }
+
+    &::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba($color-bg-section, 0.7) 0%,
-        transparent 50%
-      );
+      border-radius: $radius-xl;
+      box-shadow: inset 0 0 20px rgba($color-accent, 0);
+      pointer-events: none;
+      z-index: 2;
+      transition: box-shadow 0.4s ease;
     }
 
-    // Placeholder cuando no hay imagen
-    &--placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      min-height: 280px;
+    &:hover::before {
+      box-shadow: inset 0 0 30px rgba($color-accent, 0.3);
     }
   }
 
@@ -182,7 +186,7 @@
     background: rgba($color-accent, 0.12);
   }
 
-    &__feature-title {
+  &__feature-title {
     font-family: $font-heading;
     font-weight: $fw-bold;
     font-size: $fs-lg;
@@ -205,4 +209,4 @@
     position: relative;
     z-index: 1;
   }
-}
+} // <--- ESTA LLAVE CIERRA LA CLASE .BIKEPARK Y SIEMPRE VA AL FINAL

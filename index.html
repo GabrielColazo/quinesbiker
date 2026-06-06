@@ -24,7 +24,7 @@
   <!-- CSS compilado -->
   <link rel="stylesheet" href="./assets/css/main.css" />
   <!-- Favicon Principal -->
-<link rel="icon" type="image/png" href="./assets/img/favicon.ico">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.ico">
 </head>
 
 
@@ -80,7 +80,7 @@
 
 
   <!--HERO-->
-  
+
   <section class="hero" id="inicio">
 
     <div class="hero__bg"></div>
@@ -97,20 +97,22 @@
               <span>máximo rendimiento</span><br />
               sobre la bici.
             </h1>
-            
+
             <p class="hero__subtitle">
               Planificación inteligente, técnica y seguimiento para atletas de todos los niveles. Coaching a distancia y
               clases presenciales con circuito propio.
             </p>
 
             <div class="hero__actions d-flex flex-wrap gap-3 mt-4">
-              
-              <a href="#inscripcion" 
-                 class="btn navbar-cta px-4 py-2 fs-base d-inline-flex align-items-center justify-content-center">
+
+              <a href="#inscripcion"
+                class="btn navbar-cta px-4 py-2 fs-base d-inline-flex align-items-center justify-content-center">
                 Inscribirme Ahora <i class="bi bi-arrow-right ms-2"></i>
               </a>
 
-              <a href="#galeria" class="btn-brand btn-brand--ghost px-4 py-2 fs-base text-uppercase fw-semibold d-inline-flex align-items-center justify-content-center" style="letter-spacing: 0.08em;">
+              <a href="#galeria"
+                class="btn-brand btn-brand--ghost px-4 py-2 fs-base text-uppercase fw-semibold d-inline-flex align-items-center justify-content-center"
+                style="letter-spacing: 0.08em;">
                 Conocer el Bike Park
               </a>
 
@@ -303,15 +305,18 @@
 
       <div class="row align-items-center g-4">
 
-        <!-- Imagen -->
         <div class="col-12 col-lg-6">
-          <div class="bikepark__visual bikepark__visual--placeholder">
-            🚵
-            <!-- Reemplazar con: <img src="./assets/img/bikepark.jpg" alt="Bike Park Quines Biker" /> -->
+          <div class="bikepark__visual p-0 overflow-hidden"
+            style="border-radius: var(--bs-border-radius-xl, 1rem); border: 1px solid rgba(255,255,255,0.1);">
+            <div class="ratio ratio-4x3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13543.896791039864!2d-65.805925!3d-32.23621!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d3577d1f9e54e1%3A0x611694ae61308b34!2sMorabikecenter!5e0!3m2!1ses-419!2sar!4v1717698000000!5m2!1ses-419!2sar"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
           </div>
         </div>
 
-        <!-- Features -->
         <div class="col-12 col-lg-6">
           <div class="bikepark__features">
 
@@ -452,7 +457,7 @@
   </section>
 
 
- <!-- ============================================================
+  <!-- ============================================================
        METODOLOGÍA
   ============================================================ -->
   <section class="metodologia" id="metodologia">
@@ -466,7 +471,8 @@
 
       <!-- ✨ ACÁ QUEDA MENTIDA LA IMAGEN CON LAS CLASES COMPATIBLES CON TU SCSS -->
       <div class="metodologia__image-container">
-        <img src="./assets/img/TrainingPeaks.webp" alt="Gráfico de rendimiento TrainingPeaks" class="metodologia__image">
+        <img src="./assets/img/TrainingPeaks.webp" alt="Gráfico de rendimiento TrainingPeaks"
+          class="metodologia__image">
       </div>
 
       <div class="metodologia__body">
@@ -535,83 +541,87 @@
   </section>
 
   <!--GALERIA DE IMAGENES-->
-<section class="galeria-tira" id="galeria">
-  <div class="container position-relative">
-    
-    <div class="text-center mb-5">
-      <h2 class="galeria-tira__title" style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: #fff; letter-spacing: 1.5px;">
-        QUINES BIKER <span style="color: #00ff66;">EN ACCIÓN</span>
-      </h2>
-      <p style="color: #a3a8b4; font-family: 'Nunito Sans', sans-serif;">Conocé nuestras instalaciones, entrenamientos presenciales y salidas grupales</p>
-    </div>
+  <section class="galeria-tira" id="galeria">
+    <div class="container position-relative">
 
-    <button class="galeria-tira__btn galeria-tira__btn--prev" id="btnGaleriaPrev" aria-label="Anterior">
-      <i class="bi bi-chevron-left"></i>
-    </button>
-
-    <div class="galeria-tira__scroll" id="contenedorGaleria"></div>
-
-    <button class="galeria-tira__btn galeria-tira__btn--next" id="btnGaleriaNext" aria-label="Siguiente">
-      <i class="bi bi-chevron-right"></i>
-    </button>
-
-  </div>
-</section>
-
-<div class="modal fade galeria-tira__modal" id="galeriaModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md"> <div class="modal-content bg-transparent border-0 position-relative">
-      
-      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-2 z-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      
-      <div class="modal-body p-0 text-center">
-        <img src="" id="modalGaleriaImg" class="img-fluid galeria-tira__modal-img rounded-3" alt="Imagen ampliada">
+      <div class="text-center mb-5">
+        <h2 class="galeria-tira__title"
+          style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: #fff; letter-spacing: 1.5px;">
+          QUINES BIKER <span style="color: #00ff66;">EN ACCIÓN</span>
+        </h2>
+        <p style="color: #a3a8b4; font-family: 'Nunito Sans', sans-serif;">Conocé nuestras instalaciones, entrenamientos
+          presenciales y salidas grupales</p>
       </div>
 
+      <button class="galeria-tira__btn galeria-tira__btn--prev" id="btnGaleriaPrev" aria-label="Anterior">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <div class="galeria-tira__scroll" id="contenedorGaleria"></div>
+
+      <button class="galeria-tira__btn galeria-tira__btn--next" id="btnGaleriaNext" aria-label="Siguiente">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+
+    </div>
+  </section>
+
+  <div class="modal fade galeria-tira__modal" id="galeriaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content bg-transparent border-0 position-relative">
+
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-2 z-3"
+          data-bs-dismiss="modal" aria-label="Cerrar"></button>
+
+        <div class="modal-body p-0 text-center">
+          <img src="" id="modalGaleriaImg" class="img-fluid galeria-tira__modal-img rounded-3" alt="Imagen ampliada">
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
-<!--- ============================================================
+  <!--- ============================================================
        INSCRIPCIÓN
   ============================================================ -->
 
-<section class="inscripcion-cta py-5" id="inscripcion">
-  <div class="container text-center py-4">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6">
-        
-        <span class="inscripcion-cta__badge">PÁSATE AL SIGUIENTE NIVEL</span>
-        
-        <h2 class="inscripcion-cta__title mt-3 mb-3">
-          ¿LISTO PARA <span class="text-accent">ENTRENAR?</span>
-        </h2>
-        
-        <p class="inscripcion-cta__text mb-4">
-          Completá el formulario oficial de inscripción para reservar tu cupo, seleccionar tus horarios y coordinar con el staff.
-        </p>
-        
-        <a href="https://forms.gle/QnvpqhvF8rJQFH8g8" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="btn navbar-cta inscripcion-cta__btn">
-           Iniciar Inscripción <i class="bi bi-arrow-right ms-2"></i>
-        </a>
+  <section class="inscripcion-cta py-5" id="inscripcion">
+    <div class="container text-center py-4">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
 
+          <span class="inscripcion-cta__badge">PÁSATE AL SIGUIENTE NIVEL</span>
+
+          <h2 class="inscripcion-cta__title mt-3 mb-3">
+            ¿LISTO PARA <span class="text-accent">ENTRENAR?</span>
+          </h2>
+
+          <p class="inscripcion-cta__text mb-4">
+            Completá el formulario oficial de inscripción para reservar tu cupo, seleccionar tus horarios y coordinar
+            con el staff.
+          </p>
+
+          <a href="https://forms.gle/QnvpqhvF8rJQFH8g8" target="_blank" rel="noopener noreferrer"
+            class="btn navbar-cta inscripcion-cta__btn">
+            Iniciar Inscripción <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- ============================================================
      COACH (Carrusel de Entrenadores de Elite)
 ============================================================ -->
-<section class="coach" id="coach">
+  <section class="coach" id="coach">
     <div class="container">
 
       <div class="coach__header">
         <div class="section-title-line"></div>
         <h2 class="coach__title">Staff de Elite Detrás de Quines Biker</h2>
-        <p class="coach__subtitle">Experiencia internacional, ciencia y pasión sobre la bici al servicio de tu rendimiento.</p>
+        <p class="coach__subtitle">Experiencia internacional, ciencia y pasión sobre la bici al servicio de tu
+          rendimiento.</p>
       </div>
 
       <div id="carouselCoaches" class="carousel slide" data-bs-ride="carousel">
@@ -650,24 +660,26 @@
                   <div class="coach__role">Coach de MTB & Co-Fundador</div>
                 </div>
                 <div class="coach__quote">
-                  <p>"Mi objetivo es darte la estructura y motivación que necesitás para superar tus propios límites, volcando años de competencia internacional en tu plan."</p>
+                  <p>"Mi objetivo es darte la estructura y motivación que necesitás para superar tus propios límites,
+                    volcando años de competencia internacional en tu plan."</p>
                 </div>
 
                 <p class="coach__bio">
-  Ciclista destacado de San Luis y atleta internacional en los Mundiales UCI 2022, 2023 y 2026 en la
-  exigente modalidad de Mountain Bike XCM. Subcampeón Argentino en Parejas y reciente ganador de la
-  Vuelta del Oro 2026. Como coach, se enfoca en el desarrollo estratégico y la preparación integral de
-  ciclistas de todos los niveles.
-</p>
+                  Ciclista destacado de San Luis y atleta internacional en los Mundiales UCI 2022, 2023 y 2026 en la
+                  exigente modalidad de Mountain Bike XCM. Subcampeón Argentino en Parejas y reciente ganador de la
+                  Vuelta del Oro 2026. Como coach, se enfoca en el desarrollo estratégico y la preparación integral de
+                  ciclistas de todos los niveles.
+                </p>
 
-<div class="coach__certifications mt-4 pt-3 border-top border-secondary border-opacity-25">
-  <div class="d-flex align-items-center gap-2 text-white-50 fs-sm">
-    <i class="bi bi-patch-check-fill text-accent fs-5"></i>
-    <span class="font-heading fw-semibold text-uppercase tracking-wider" style="font-size: 0.85rem; letter-spacing: 0.05em;">
-      Certificado de Coaching Deportivo · <span class="text-white">Axion Training</span>
-    </span>
-  </div>
-</div>           
+                <div class="coach__certifications mt-4 pt-3 border-top border-secondary border-opacity-25">
+                  <div class="d-flex align-items-center gap-2 text-white-50 fs-sm">
+                    <i class="bi bi-patch-check-fill text-accent fs-5"></i>
+                    <span class="font-heading fw-semibold text-uppercase tracking-wider"
+                      style="font-size: 0.85rem; letter-spacing: 0.05em;">
+                      Certificado de Coaching Deportivo · <span class="text-white">Axion Training</span>
+                    </span>
+                  </div>
+                </div>
 
 
 
@@ -720,23 +732,25 @@
                   <div class="coach__role">Atleta de Élite & Coach Deportivo</div>
                 </div>
                 <div class="coach__quote">
-                  <p>"El éxito en el ciclismo depende de la resiliencia mental. Fusiono mi experiencia en las carreras más duras de América con la gestión emocional."</p>
+                  <p>"El éxito en el ciclismo depende de la resiliencia mental. Fusiono mi experiencia en las carreras
+                    más duras de América con la gestión emocional."</p>
                 </div>
                 <p class="coach__bio">
-  Referente del MTB nacional y Bicampeón Provincial. Cuenta con tres participaciones mundialistas
-  (destacando su Top 15 en Villa La Angostura y Nevados de Chillán) y Medalla de Bronce Panamericana. Su
-  metodología combina el entrenamiento físico de alto rendimiento con liderazgo estratégico para
-  potenciar tanto a amateurs como a profesionales.
-</p>
+                  Referente del MTB nacional y Bicampeón Provincial. Cuenta con tres participaciones mundialistas
+                  (destacando su Top 15 en Villa La Angostura y Nevados de Chillán) y Medalla de Bronce Panamericana. Su
+                  metodología combina el entrenamiento físico de alto rendimiento con liderazgo estratégico para
+                  potenciar tanto a amateurs como a profesionales.
+                </p>
 
-<div class="coach__certifications mt-4 pt-3 border-top border-secondary border-opacity-25">
-  <div class="d-flex align-items-center gap-2 text-white-50 fs-sm">
-    <i class="bi bi-patch-check-fill text-accent fs-5"></i>
-    <span class="font-heading fw-semibold text-uppercase tracking-wider" style="font-size: 0.85rem; letter-spacing: 0.05em;">
-      Certificado de Coaching Deportivo · <span class="text-white">Axion Training</span>
-    </span>
-  </div>
-</div>
+                <div class="coach__certifications mt-4 pt-3 border-top border-secondary border-opacity-25">
+                  <div class="d-flex align-items-center gap-2 text-white-50 fs-sm">
+                    <i class="bi bi-patch-check-fill text-accent fs-5"></i>
+                    <span class="font-heading fw-semibold text-uppercase tracking-wider"
+                      style="font-size: 0.85rem; letter-spacing: 0.05em;">
+                      Certificado de Coaching Deportivo · <span class="text-white">Axion Training</span>
+                    </span>
+                  </div>
+                </div>
                 <div class="coach__stats">
                   <div class="coach__stat">
                     <span class="coach__stat-number">4x</span>
@@ -785,7 +799,8 @@
                   <div class="coach__role">Entrenador Especializado & Analista</div>
                 </div>
                 <div class="coach__quote">
-                  <p>"Combinamos la experiencia práctica, la formación científica y el análisis riguroso de datos para optimizar tu preparación de forma sostenible."</p>
+                  <p>"Combinamos la experiencia práctica, la formación científica y el análisis riguroso de datos para
+                    optimizar tu preparación de forma sostenible."</p>
                 </div>
                 <p class="coach__bio">
                   Ex-ciclista Élite nacional e internacional. Con más de 8 años de trayectoria, está certificado por la
@@ -823,8 +838,7 @@
           <div class="carousel-item">
             <div class="coach__inner">
               <div class="coach__photo-wrap">
-                <img class="coach__photo" src="./assets/img/Lagos Mario.webp"
-                  alt="Mario Lagos - Quines Biker" />
+                <img class="coach__photo" src="./assets/img/Lagos Mario.webp" alt="Mario Lagos - Quines Biker" />
                 <div class="coach__photo-deco"></div>
                 <div class="coach__photo-badge">
                   <span class="coach__photo-badge-icon">🏊</span>
@@ -835,20 +849,22 @@
                 </div>
               </div>
 
-            <div class="coach__content">
-  <div>
-    <div class="coach__name">Lagos Mario</div>
-    <div class="coach__role">Profesor de Educación Física, Entrenador de Natación e Instructor de Guardavidas</div>
-  </div>
-  
-  <p class="coach__bio">
-    <strong style="color: var(--color-text); display: block; margin-bottom: 0.5rem;">Trayectoria y Experiencia:</strong>
-    • Conducción técnica de la Selección de San Luis de Natación.<br>
-    • Dirección del Equipo Nacional de Universitarios.<br>
-    • Preparación en Juegos Binacionales.<br>
-    • Coordinación de natación y triatlón en Juegos Evita.<br>
-    • Docente a cargo del Curso de Guardavidas.
-  </p>
+              <div class="coach__content">
+                <div>
+                  <div class="coach__name">Lagos Mario</div>
+                  <div class="coach__role">Profesor de Educación Física, Entrenador de Natación e Instructor de
+                    Guardavidas</div>
+                </div>
+
+                <p class="coach__bio">
+                  <strong style="color: var(--color-text); display: block; margin-bottom: 0.5rem;">Trayectoria y
+                    Experiencia:</strong>
+                  • Conducción técnica de la Selección de San Luis de Natación.<br>
+                  • Dirección del Equipo Nacional de Universitarios.<br>
+                  • Preparación en Juegos Binacionales.<br>
+                  • Coordinación de natación y triatlón en Juegos Evita.<br>
+                  • Docente a cargo del Curso de Guardavidas.
+                </p>
 
                 <div class="coach__stats">
                   <div class="coach__stat">
@@ -900,65 +916,68 @@
   <!-- ============================================================
      FOOTER
 ============================================================ -->
-<footer class="footer">
-  <div class="container footer__container">
+  <footer class="footer">
+    <div class="container footer__container">
 
-    <div class="footer__main">
+      <div class="footer__main">
 
-      <!-- Brand -->
-      <div class="footer__brand">
-        <img class="footer__logo" src="./assets/img/logodefinitivo.webp" alt="Quines Biker" />
-        <p class="footer__tagline">
-          Escuela de Ciclismo Quines Biker. Planificación inteligente, técnica y seguimiento para atletas de todos los niveles.
+        <!-- Brand -->
+        <div class="footer__brand">
+          <img class="footer__logo" src="./assets/img/logodefinitivo.webp" alt="Quines Biker" />
+          <p class="footer__tagline">
+            Escuela de Ciclismo Quines Biker. Planificación inteligente, técnica y seguimiento para atletas de todos los
+            niveles.
+          </p>
+          <div class="footer__social">
+            <a class="footer__social-link footer__social-link--instagram" href="https://instagram.com/TU_USUARIO"
+              target="_blank" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a class="footer__social-link footer__social-link--whatsapp" href="https://wa.me/2664818711" target="_blank"
+              aria-label="WhatsApp">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a class="footer__social-link footer__social-link--mail" href="mailto:TU_EMAIL" aria-label="Email">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navegación Horizontal y Pagos Integrados -->
+        <div class="footer__nav">
+          <ul class="footer__nav-list list-unstyled">
+            <li><a class="footer__nav-link" href="#inicio">Inicio</a></li>
+            <li><a class="footer__nav-link" href="#niveles">Entrenar</a></li>
+            <li><a class="footer__nav-link" href="#presencial">Presencial</a></li>
+            <li><a class="footer__nav-link" href="#bikepark">Bike Park</a></li>
+            <li><a class="footer__nav-link" href="#planes">Planes</a></li>
+            <li><a class="footer__nav-link" href="#metodologia">Metodología</a></li>
+            <li><a class="footer__nav-link" href="#galeria">Galería</a></li>
+            <li><a class="footer__nav-link" href="#inscripcion">Inscripción</a></li>
+            <li><a class="footer__nav-link" href="#coach">Staff</a></li>
+          </ul>
+
+          <div class="footer__payments">
+            <span class="footer__payment-badge">Transferencia</span>
+            <span class="footer__payment-badge">MODO</span>
+            <span class="footer__payment-badge">Mercado Pago</span>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer__divider" />
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Escuela de Ciclismo Quines Biker. Todos los derechos reservados.</p>
+        <p class="footer__credit">
+          Diseño y desarrollo por <a href="https://gaboweb.com.ar">GaboWeb<span class="light-line"></span></a>
         </p>
-        <div class="footer__social">
-          <a class="footer__social-link footer__social-link--instagram" href="https://instagram.com/TU_USUARIO" target="_blank" aria-label="Instagram">
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a class="footer__social-link footer__social-link--whatsapp" href="https://wa.me/2664818711" target="_blank" aria-label="WhatsApp">
-            <i class="bi bi-whatsapp"></i>
-          </a>
-          <a class="footer__social-link footer__social-link--mail" href="mailto:TU_EMAIL" aria-label="Email">
-            <i class="bi bi-envelope"></i>
-          </a>
-        </div>
-      </div>
 
-      <!-- Navegación Horizontal y Pagos Integrados -->
-      <div class="footer__nav">
-        <ul class="footer__nav-list list-unstyled">
-          <li><a class="footer__nav-link" href="#inicio">Inicio</a></li>
-          <li><a class="footer__nav-link" href="#niveles">Entrenar</a></li>
-          <li><a class="footer__nav-link" href="#presencial">Presencial</a></li>
-          <li><a class="footer__nav-link" href="#bikepark">Bike Park</a></li>
-          <li><a class="footer__nav-link" href="#planes">Planes</a></li>
-          <li><a class="footer__nav-link" href="#metodologia">Metodología</a></li>
-          <li><a class="footer__nav-link" href="#galeria">Galería</a></li>
-          <li><a class="footer__nav-link" href="#inscripcion">Inscripción</a></li>
-          <li><a class="footer__nav-link" href="#coach">Staff</a></li>
-        </ul>
-
-        <div class="footer__payments">
-          <span class="footer__payment-badge">Transferencia</span>
-          <span class="footer__payment-badge">MODO</span>
-          <span class="footer__payment-badge">Mercado Pago</span>
-        </div>
       </div>
 
     </div>
-
-    <hr class="footer__divider" />
-
-    <div class="footer__bottom">
-      <p class="footer__copy">© 2026 Escuela de Ciclismo Quines Biker. Todos los derechos reservados.</p>
-       <p class="footer__credit">
-  Diseño y desarrollo por <a href="https://gaboweb.com.ar">GaboWeb<span class="light-line"></span></a>
-</p>
-   
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <!-- ============================================================
      WHATSAPP FLOTANTE
