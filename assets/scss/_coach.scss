@@ -197,6 +197,17 @@
     margin-bottom: 0;
   }
 
+  // NUEVO ELEMENTO ANIDADO DE FORMA CORRECTA
+  &__certifications {
+    .text-accent {
+      color: $color-accent; // Aplica tu color flúor de variables
+    }
+
+    i {
+      line-height: 1;
+    }
+  }
+
   // ─── STATS DEL COACH ────────────────────────────────────
   &__stats {
     display: grid;
@@ -314,4 +325,15 @@
       }
     }
   }
+}
+
+// ─── ANIMACIONES ────────────────────────────────────────────
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+@keyframes bounce-down {
+  0%, 100% { transform: translate(-50%, 0); }
+  50%       { transform: translate(-50%, 6px); }
 }
