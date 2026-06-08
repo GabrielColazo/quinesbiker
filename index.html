@@ -613,9 +613,8 @@
     </div>
   </section>
 
-  <!-- ============================================================
-     COACH (Carrusel de Entrenadores de Elite)
-============================================================ -->
+  <!-------------------STAFF DE COACHS----------------->
+
   <section class="coach" id="coach">
     <div class="container">
 
@@ -637,6 +636,8 @@
             aria-label="Juan José Godoy"></button>
           <button type="button" data-bs-target="#carouselCoaches" data-bs-slide-to="3"
             aria-label="Mario Lagos"></button>
+          <button type="button" data-bs-target="#carouselCoaches" data-bs-slide-to="4"
+            aria-label="Marina Flores"></button>
         </div>
 
         <div class="carousel-inner">
@@ -843,7 +844,7 @@
                     Guardavidas</div>
                 </div>
 
-                <p class="coach__bio">
+                <p class="coach__bio" style="margin-top: 1rem;">
                   <strong style="color: var(--color-text); display: block; margin-bottom: 0.5rem;">Trayectoria y
                     Experiencia:</strong>
                   • Conducción técnica de la Selección de San Luis de Natación.<br>
@@ -876,6 +877,59 @@
             </div>
           </div>
 
+          <div class="carousel-item">
+            <div class="coach__inner">
+              <div class="coach__photo-wrap">
+                <img class="coach__photo" src="./assets/img/Marina Flores.webp"
+                  alt="Lic. Marina Flores - Nutricionista Quines Biker" />
+                <div class="coach__photo-deco"></div>
+                <div class="coach__photo-badge">
+                  <span class="coach__photo-badge-icon">🍏</span>
+                  <div class="coach__photo-badge-text">
+                    Lic. en Nutrición
+                    <span>UNSL Certified</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="coach__content">
+                <div>
+                  <div class="coach__name">Lic. Marina Flores</div>
+                  <div class="coach__role">Atención Nutricional Integral</div>
+                </div>
+                <div class="coach__quote">
+                  <p>"Diseñamos estrategias nutricionales basadas en evidencia científica para potenciar tu salud,
+                    bienestar y rendimiento de manera sostenible."</p>
+                </div>
+                <p class="coach__bio">
+                  Egresada de la Universidad Nacional de San Luis (UNSL). Especializada en atención personalizada para
+                  todas las edades, enfoca su práctica en la educación alimentaria y el seguimiento de la composición
+                  corporal. Actualmente profundiza sus estudios en nutrición deportiva de vanguardia para optimizar el
+                  desempeño físico de atletas.
+                </p>
+                <div class="coach__stats">
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">UNSL</span>
+                    <span class="coach__stat-label">Grado Académico</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">PLAN</span>
+                    <span class="coach__stat-label">Planes de Alimentación</span>
+                  </div>
+                  <div class="coach__stat">
+                    <span class="coach__stat-number">PRO</span>
+                    <span class="coach__stat-label">Nutr. Deportiva</span>
+                  </div>
+                </div>
+                <div class="coach__actions">
+                  <a href="#planes" class="btn-brand btn-brand--outline">
+                    Ver Planes
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <button class="carousel-control-prev coach__control coach__control--prev" type="button"
@@ -893,8 +947,6 @@
 
     </div>
   </section>
-
-
 
   <!-- ============================================================
      FOOTER
