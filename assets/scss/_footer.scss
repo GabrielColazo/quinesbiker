@@ -4,7 +4,9 @@
 
 @use 'variables' as *;
 
-// 1. ANIMACIONES (Siempre arriba o afuera para evitar conflictos de Scope con @use)
+// ==========================================
+// 1. ANIMACIONES (Siempre en la raíz global)
+// ==========================================
 @keyframes footerGlow {
   0%, 100% {
     filter: drop-shadow(0 0 2px rgba($color-accent, 0.3)) opacity(0.7);
@@ -14,7 +16,18 @@
   }
 }
 
+@keyframes logoShimmerEffect {
+  0% {
+    left: -150%;
+  }
+  15%, 100% {
+    left: 150%; // Pasa de largo velozmente y espera hasta reiniciar el ciclo
+  }
+}
+
+// ==========================================
 // 2. ESTILOS DEL COMPONENTE
+// ==========================================
 .footer {
   background-color: $color-bg-section;
   border-top: 1px solid $color-border;
@@ -72,11 +85,38 @@
     }
   }
 
+  // NUEVO CONTENEDOR DEL LOGO (Fijo y seguro)
+  &__logo-box {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: hidden; // Recorta el destello para que no salga de los bordes del logo
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6)); // Sombra optimizada
+
+    // EL DESTELLO DE LUZ
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%, // Luz blanca sutil aumentada a 0.3 para notar mejor el efecto
+        rgba(255, 255, 255, 0) 100%  // <--- CORREGIDO: Añadido el % que faltaba
+      );
+      transform: skewX(-25deg); // Inclina el brillo diagonalmente
+      pointer-events: none;
+      animation: logoShimmerEffect 6s ease-in-out infinite; // Bajado a 6s para probarlo más rápido
+    }
+  }
+
+  // TU LOGO LIMPIO
   &__logo {
     height: 75px; 
     width: auto;
-    margin: 0 auto;           
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6)); 
+    display: block; 
   }
 
   &__tagline {
@@ -91,38 +131,39 @@
   // REDES SOCIALES
   &__social {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.85rem; 
     margin-top: 0.25rem;
   }
 
   &__social-link {
-    width: 42px; 
-    height: 42px; 
+    width: 48px;        
+    height: 48px;       
     border-radius: $radius-md;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem; 
+    font-size: 1.4rem;  
     color: rgba(#ffffff, 0.85);
-    transition: $transition-base;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     text-decoration: none;
 
     &:hover {
       background: rgba($color-accent, 0.15);
       border-color: $color-accent;
       color: $color-accent;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba($color-accent, 0.25); 
+      transform: translateY(-4px) scale(1.1); 
+      box-shadow: 0 6px 16px rgba($color-accent, 0.3); 
     }
 
-    &--instagram:hover { color: #e1306c; border-color: #e1306c; background: rgba(225, 48, 108, 0.1); }
-    &--whatsapp:hover { color: #25d366; border-color: #25d366; background: rgba(37, 211, 102, 0.1); }
-    &--mail:hover { color: $color-secondary-light; border-color: $color-secondary-light; background: rgba($color-secondary-light, 0.1); }
+    &--instagram:hover { color: #e1306c; border-color: #e1306c; background: rgba(225, 48, 108, 0.1); box-shadow: 0 6px 16px rgba(#e1306c, 0.3); }
+    &--facebook:hover  { color: #1877f2; border-color: #1877f2; background: rgba(24, 119, 242, 0.1); box-shadow: 0 6px 16px rgba(#24119242, 0.3); }
+    &--whatsapp:hover  { color: #25d366; border-color: #25d366; background: rgba(37, 211, 102, 0.1); box-shadow: 0 6px 16px rgba(#25d366, 0.3); }
+    &--mail:hover      { color: $color-secondary-light; border-color: $color-secondary-light; background: rgba($color-secondary-light, 0.1); box-shadow: 0 6px 16px rgba($color-secondary-light, 0.3); }
   }
 
-  // NAVEGACIÓN (Botonera Centrada y Efectos Premium de Animación)
+  // NAVEGACIÓN (Botonera Centrada)
   &__nav {
     display: flex;
     flex-direction: column;
@@ -134,7 +175,7 @@
     @media (min-width: 992px) {
       flex-direction: row;     
       align-items: center;     
-      justify-content: flex-end; 
+      justify-content: center; 
       gap: 3rem;               
       width: auto;
     }
@@ -150,8 +191,8 @@
     list-style: none;          
 
     @media (min-width: 992px) {
-      justify-content: flex-end; 
-      max-width: 600px;           
+      justify-content: center; 
+      max-width: 750px;        
     }
   }
 
@@ -167,7 +208,6 @@
     position: relative;        
     transition: color 0.3s ease;
 
-    // Efecto Línea expansiva con resplandor neón (Glow)
     &::after {
       content: '';
       position: absolute;
@@ -182,43 +222,10 @@
 
     &:hover {
       color: #ffffff !important; 
-      
       &::after {
         width: 100%;
         left: 0;
       }
-    }
-  }
-  
-  // MEDIOS DE PAGO
-  &__payments {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    
-    @media (min-width: 992px) {
-      border-left: 1px solid rgba($color-border, 0.3); 
-      padding-left: 1.5rem; 
-    }
-  }
-
-  &__payment-badge {
-    font-family: $font-heading;
-    font-size: 10px; 
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: rgba(#ffffff, 0.9); 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: $radius-sm;
-    padding: 0.25rem 0.65rem;
-    transition: $transition-base;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
     }
   }
   
@@ -274,7 +281,7 @@
   // CRÉDITO DE AUTOR (Sello de Autor GaboWeb Premium)
   &__credit {
     font-family: $font-body;
-    font-size: 13px;             // <-- Subimos un toque el tamaño general (estaba en 11px)
+    font-size: 13px;          
     color: rgba(#ffffff, 0.4);
     margin-bottom: 0;
     letter-spacing: 0.03em;
@@ -284,28 +291,26 @@
       color: rgba(#ffffff, 0.9); 
       text-decoration: none;
       font-weight: 700;          
-      letter-spacing: 0.08em;    // Un poco más de tracking para que se vea más pro
+      letter-spacing: 0.08em;    
       position: relative;
       display: inline-block;     
       padding: 0 4px;
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-      // Estilo personalizado para tu firma <GaboWeb/>
       &::before {
         content: '<';
-        color: $color-accent;    // El primer bracket toma el color de acento
+        color: $color-accent;    
         margin-right: 1px;
         transition: all 0.3s ease;
       }
       
       &::after {
         content: '/>';
-        color: $color-accent;    // El cierre toma el color de acento
+        color: $color-accent;    
         margin-left: 1px;
         transition: all 0.3s ease;
       }
 
-      // El subrayado líquido ahora se adapta al tamaño del texto
       .light-line {
         position: absolute;
         bottom: -2px;
@@ -317,12 +322,12 @@
       }
 
       &:hover {
-        color: #ffffff;          // Resalta el "GaboWeb" en blanco puro
+        color: #ffffff;          
         transform: translateY(-2px); 
         text-shadow: 0 0 14px rgba($color-accent, 0.6); 
 
         &::before, &::after {
-          color: #ffffff;        // En hover, todo tu tag se ilumina completo
+          color: #ffffff;        
           text-shadow: 0 0 14px rgba($color-accent, 0.8);
         }
 
