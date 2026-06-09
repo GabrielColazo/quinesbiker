@@ -611,6 +611,7 @@ section {
 }
 .hero__actions {
   margin-bottom: 3rem;
+  width: 100%;
 }
 .hero__actions .navbar-cta {
   font-family: "Rajdhani", sans-serif;
@@ -630,6 +631,35 @@ section {
 }
 .hero__actions .navbar-cta:hover i {
   transform: translateX(4px);
+}
+.hero__actions-bottom {
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .hero__actions-bottom {
+    margin-top: 1rem;
+    max-width: 490px;
+  }
+}
+.hero__actions .hero__btn-link {
+  font-family: "Rajdhani", sans-serif;
+  color: rgba(248, 250, 252, 0.65);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(248, 250, 252, 0.15);
+  border-radius: 0;
+  transition: all 0.25s ease;
+}
+.hero__actions .hero__btn-link i {
+  transition: transform 0.3s ease;
+  color: #EA580C;
+}
+.hero__actions .hero__btn-link:hover {
+  color: #F8FAFC;
+  border-bottom-color: #EA580C;
+}
+.hero__actions .hero__btn-link:hover i {
+  transform: translateY(3px);
 }
 .hero__logo-floating {
   display: none;
@@ -1313,6 +1343,7 @@ section {
   grid-template-columns: 1fr;
   gap: 1.5rem;
   align-items: start;
+  margin-bottom: 3.5rem;
 }
 @media (min-width: 768px) {
   .planes__grid {
@@ -1389,7 +1420,7 @@ section {
 }
 .planes__price-amount {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: 1;
   color: #F8FAFC;
 }
@@ -1489,9 +1520,63 @@ section {
   transform: translateY(-2px);
   color: #fff;
 }
+.planes__disciplinas {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+.planes__disciplinas--bg-image {
+  padding: 3.5rem 1.5rem;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.planes__disciplinas--bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/galeria-2.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  filter: grayscale(100%);
+  z-index: -1;
+  transition: all 0.25s ease;
+}
+.planes__disciplinas--bg-image:hover::before {
+  opacity: 0.1;
+}
+.planes__disciplinas-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.planes__disciplinas-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .planes__disciplinas-title {
+    font-size: 2.2rem;
+  }
+}
+.planes__disciplinas-subtitle {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+  color: #94A3B8;
+  font-weight: 400;
+  text-align: center;
+}
 .planes__presencial {
   text-align: center;
-  margin-top: 2.5rem;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1502,6 +1587,57 @@ section {
   font-size: 1.125rem;
   color: #94A3B8;
   margin-bottom: 1.25rem;
+}
+
+.disciplina-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(26, 16, 53, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.1rem 1.5rem;
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(4px);
+}
+.disciplina-box__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #F8FAFC;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.disciplina-box__content i {
+  font-size: 1.3rem;
+  color: rgba(248, 250, 252, 0.6);
+  transition: color 0.3s ease;
+}
+.disciplina-box .whatsapp-icon {
+  font-size: 1.1rem;
+  color: rgba(248, 250, 252, 0.3);
+  transition: all 0.3s ease;
+}
+.disciplina-box:hover {
+  background: #25d366;
+  border-color: #25d366;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  backdrop-filter: none;
+}
+.disciplina-box:hover .disciplina-box__content {
+  color: #ffffff;
+}
+.disciplina-box:hover .disciplina-box__content i {
+  color: #ffffff;
+}
+.disciplina-box:hover .whatsapp-icon {
+  color: #ffffff;
+  transform: scale(1.15);
 }
 
 .metodologia {

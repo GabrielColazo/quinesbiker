@@ -145,6 +145,7 @@
   // Contenedor de Botones
   &__actions {
     margin-bottom: 3rem;
+    width: 100%;
 
     .navbar-cta {
       font-family: $font-heading;
@@ -165,6 +166,41 @@
 
         i {
           transform: translateX(4px);
+        }
+      }
+    }
+
+    // Contenedor del tercer botón para centrar en PC respecto al bloque de arriba
+    &-bottom {
+      margin-top: 0.5rem;
+      
+      @media (min-width: 768px) {
+        margin-top: 1rem;
+        max-width: 490px; // Se alinea al ancho que ocupan los dos botones superiores juntos
+      }
+    }
+
+    // Estilos del enlace inferior "Planificá tu entrenamiento"
+    .hero__btn-link {
+      font-family: $font-heading;
+      color: rgba($color-text, 0.65);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 2px solid rgba($color-text, 0.15);
+      border-radius: 0;
+      transition: $transition-base;
+
+      i {
+        transition: transform 0.3s ease;
+        color: $color-accent;
+      }
+
+      &:hover {
+        color: $color-text;
+        border-bottom-color: $color-accent;
+        
+        i {
+          transform: translateY(3px);
         }
       }
     }

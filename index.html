@@ -103,7 +103,8 @@
               clases presenciales con circuito propio.
             </p>
 
-            <div class="hero__actions d-flex flex-wrap gap-3 mt-4">
+            <div
+              class="hero__actions d-flex flex-column align-items-center flex-md-row flex-wrap align-items-md-start gap-3 mt-4">
 
               <a href="#inscripcion"
                 class="btn navbar-cta px-4 py-2 fs-base d-inline-flex align-items-center justify-content-center">
@@ -115,6 +116,13 @@
                 style="letter-spacing: 0.08em;">
                 Conocer el Bike Park
               </a>
+
+              <div class="hero__actions-bottom w-100 d-flex justify-content-center justify-content-md-center">
+                <a href="#planifica-entrenamiento"
+                  class="btn hero__btn-link px-0 py-2 fs-base text-uppercase fw-semibold d-inline-flex align-items-center">
+                  Planificá tu entrenamiento <i class="bi bi-arrow-down-short fs-4 ms-1"></i>
+                </a>
+              </div>
 
             </div>
 
@@ -362,10 +370,9 @@
     </div>
   </section>
 
+  <!-- PLANES-->
 
-  <!-- ============================================================
-       PLANES
-  ============================================================ -->
+
   <section class="planes" id="planes">
     <div class="container">
 
@@ -377,7 +384,6 @@
 
       <div class="planes__grid">
 
-        <!-- Plan Básico -->
         <div class="planes__card planes__card--basico">
           <div class="planes__plan-name">Plan Básico</div>
           <div class="planes__price">
@@ -385,7 +391,6 @@
             <span class="planes__price-amount">30.000</span>
             <span class="planes__price-period">/ mes</span>
           </div>
-          <p class="planes__price-note">Transferencia · MODO · Mercado Pago</p>
           <hr class="planes__divider" />
           <ul class="planes__features">
             <li class="planes__feature">
@@ -407,7 +412,6 @@
           </a>
         </div>
 
-        <!-- Plan Premium -->
         <div class="planes__card planes__card--premium">
           <span class="planes__popular">⭐ Más Elegido</span>
           <div class="planes__plan-name">Plan Premium</div>
@@ -416,7 +420,6 @@
             <span class="planes__price-amount">60.000</span>
             <span class="planes__price-period">/ mes</span>
           </div>
-          <p class="planes__price-note">Transferencia · MODO · Mercado Pago</p>
           <hr class="planes__divider" />
           <ul class="planes__features">
             <li class="planes__feature">
@@ -436,7 +439,7 @@
               Feedback y análisis continuo de métricas
             </li>
           </ul>
-          <a href="https://wa.me/2664818711text=Hola!%20Quiero%20inscribirme%20al%20Plan%20Premium%20de%20Quines%20Biker"
+          <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20inscribirme%20al%20Plan%20Premium%20de%20Quines%20Biker"
             class="planes__btn planes__btn--premium" target="_blank">
             Elegir Plan Premium
           </a>
@@ -444,7 +447,50 @@
 
       </div>
 
-      <!-- CTA Presencial -->
+      <div id="planifica-entrenamiento" class="planes__disciplinas planes__disciplinas--bg-image">
+        <div class="planes__disciplinas-header text-center">
+          <h3 class="planes__disciplinas-title">Planificá tu entrenamiento</h3>
+          <p class="planes__disciplinas-subtitle">Seleccioná tu especialidad y coordinamos tu plan a medida</p>
+        </div>
+
+        <div class="row g-3 justify-content-center">
+
+          <div class="col-sm-6 col-md-4">
+            <a href="https://wa.me/2664818711?text=¡Hola!%20Estoy%20interesado%20en%20la%20Planificación%20de%20Ciclismo.%20Me%20gustaría%20coordinar%20para%20armar%20mi%20plan."
+              class="disciplina-box" target="_blank">
+              <div class="disciplina-box__content">
+                <i class="bi bi-bicycle"></i>
+                <span>Ciclismo</span>
+              </div>
+              <i class="bi bi-whatsapp whatsapp-icon"></i>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <a href="https://wa.me/2664818711?text=¡Hola!%20Quiero%20entrenar%20para%20Duatlón.%20Me%20gustaría%20solicitar%20información%20sobre%20la%20planificación."
+              class="disciplina-box" target="_blank">
+              <div class="disciplina-box__content">
+                <i class="bi bi-clock-history"></i>
+                <span>Duatlón</span>
+              </div>
+              <i class="bi bi-whatsapp whatsapp-icon"></i>
+            </a>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <a href="https://wa.me/2664818711?text=¡Hola!%20Me%20interesa%20la%20planificación%20integral%20para%20Triatlón.%20¿Me%20podrían%20dar%20más%20detalles?"
+              class="disciplina-box" target="_blank">
+              <div class="disciplina-box__content">
+                <i class="bi bi-water"></i>
+                <span>Triatlón</span>
+              </div>
+              <i class="bi bi-whatsapp whatsapp-icon"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
       <div class="planes__presencial">
         <p>¿Buscás clases presenciales o la Escuela Infantil? Consultanos por los abonos disponibles.</p>
         <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20consultar%20por%20abonos%20presenciales%20en%20Quines%20Biker"
