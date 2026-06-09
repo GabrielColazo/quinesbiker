@@ -1,5 +1,5 @@
 // ============================================================
-// _hero.scss — Quines Biker (Versión Integrada Total)
+// _hero.scss — Quines Biker (Versión Integrada Total Corregida)
 // ============================================================
 
 @use 'variables' as *;
@@ -170,13 +170,13 @@
       }
     }
 
-    // Contenedor del tercer botón para centrar en PC respecto al bloque de arriba
+    // Contenedor del tercer botón: centrado hasta tablet (991px) y con ancho máximo en PC (992px)
     &-bottom {
       margin-top: 0.5rem;
       
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         margin-top: 1rem;
-        max-width: 490px; // Se alinea al ancho que ocupan los dos botones superiores juntos
+        max-width: 490px; // Se alinea al ancho que ocupan los dos botones superiores juntos en escritorio
       }
     }
 

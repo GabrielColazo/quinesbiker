@@ -635,7 +635,7 @@ section {
 .hero__actions-bottom {
   margin-top: 0.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .hero__actions-bottom {
     margin-top: 1rem;
     max-width: 490px;
