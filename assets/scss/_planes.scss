@@ -1,6 +1,6 @@
 // ============================================================
 // _planes.scss — Quines Biker
-// Sección 5: Planes y precios (Actualizado con imagen de fondo)
+// Sección 5: Planificación y Precios (Estructura Inteligente)
 // ============================================================
 
 @use 'variables' as *;
@@ -40,16 +40,69 @@
     margin: 0 auto;
   }
 
-  // ─── GRID ───────────────────────────────────────────────
+// ─── COMPONENTE TABS (BOTONERA NATIVA BOOTSTRAP) ────────
+ 
+  .nav-pills {
+    background: rgba($color-bg-card, 0.4);
+    padding: 0.4rem;
+    border-radius: $radius-pill;
+    border: 1px solid $color-border;
+    display: inline-flex;
+    width: auto;
+    margin: 0 auto; // <-- Esto ya ayuda a centrar si el contenedor es un bloque
+
+  
+    // Asegura el centrado perfecto de los botones internos en pantallas grandes
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 576px) {
+      width: 100%;
+      flex-direction: column;
+      border-radius: $radius-lg;
+      padding: 0.5rem;
+    }
+    
+    
+    .nav-link {
+      font-family: $font-heading;
+      color: $color-text-muted;
+      background: transparent;
+      border-radius: $radius-pill;
+      transition: $transition-base;
+
+      @media (max-width: 576px) {
+        border-radius: $radius-md;
+        width: 100%;
+        text-align: center;
+      }
+
+      &:hover {
+        color: $color-text;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      &.active {
+        background: $gradient-cta;
+        color: #ffffff;
+        box-shadow: $shadow-glow-orange;
+      }
+    }
+  }
+
+  // ─── GRID (ACTUALIZADO A 3 COLUMNAS) ────────────────────
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     align-items: start;
-    margin-bottom: 3.5rem; // Espacio con las disciplinas de abajo
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr); // 3 columnas perfectas en desktop
       align-items: stretch;
     }
   }
@@ -70,11 +123,30 @@
       transform: translateY(-5px);
     }
 
-    // ─── CARD PREMIUM (destacada) ─────────────────────────
+    // VARIANTE PLAN INTERMEDIO (Elegante con acento violeta de la escuela)
+    &--intermedio {
+      border-color: rgba($color-primary-light, 0.25);
+      background: linear-gradient(145deg, $color-bg-card, rgba($color-primary, 0.12));
+
+      &:hover {
+        box-shadow: $shadow-glow-purple;
+        border-color: rgba($color-primary-light, 0.5);
+      }
+    }
+
+    // VARIANTE CARD PREMIUM (Destacada Máxima)
     &--premium {
       border-color: rgba($color-accent, 0.35);
       background: linear-gradient(145deg, $color-bg-card, rgba($color-accent, 0.06));
       box-shadow: 0 8px 40px rgba($color-accent, 0.15);
+
+      @media (min-width: 768px) and (max-width: 991px) {
+        grid-column: span 2; // Se centra sola abajo en tablets
+      }
+      
+      @media (min-width: 992px) {
+        grid-column: auto;
+      }
 
       &:hover {
         box-shadow: $shadow-glow-orange;
@@ -153,13 +225,6 @@
     padding-bottom: 0.5rem;
   }
 
-  &__price-note {
-    font-family: $font-body;
-    font-size: $fs-sm;
-    color: $color-text-muted;
-    margin-bottom: 1.75rem;
-  }
-
   &__divider {
     border: none;
     height: 1px;
@@ -235,6 +300,20 @@
       }
     }
 
+    // BOTÓN INTERMEDIO (Estilo intermedio sobrio y combinando con el violeta de la marca)
+    &--intermedio {
+      background: transparent;
+      color: $color-text;
+      border: 2px solid $color-primary-light;
+
+      &:hover {
+        background: $color-primary-light;
+        color: #ffffff;
+        box-shadow: $shadow-glow-purple;
+        transform: translateY(-2px);
+      }
+    }
+
     &--premium {
       background: $gradient-cta;
       color: #fff;
@@ -250,12 +329,11 @@
 
   // ─── SECCIÓN INTERNA DISCIPLINAS ───────────────────────────
   &__disciplinas {
-    border-top: 1px solid rgba($color-border, 0.5);
-    margin-bottom: 3.5rem;
+    margin-top: 1rem;
     position: relative;
     z-index: 1;
+    background: rgba($color-bg-card, 0.3);
 
-    // Variante que carga la imagen transparente estilo Hero
     &--bg-image {
       padding: 3.5rem 1.5rem;
       border-radius: $radius-xl;
@@ -268,18 +346,18 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('../img/galeria-2.webp'); // <-- Tu ruta acá
+        background-image: url('../img/galeria-2.webp');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        opacity: 0.06; // Transparencia sutil para el estilo Dark elegante
-        filter: grayscale(100%); // Forzado blanco y negro integrado
+        opacity: 0.06;
+        filter: grayscale(100%);
         z-index: -1;
         transition: $transition-base;
       }
 
       &:hover::before {
-        opacity: 0.1; // Pequeño destello visual al interactuar
+        opacity: 0.1;
       }
     }
   }
@@ -299,7 +377,7 @@
     margin-bottom: 0.5rem;
 
     @media (min-width: 768px) {
-      font-size: 2.2rem;
+      size: 2.2rem;
     }
   }
 
@@ -321,6 +399,7 @@
 
     p {
       font-family: $font-heading;
+      font-weight: $fw-regular;
       font-size: $fs-lg;
       color: $color-text-muted;
       margin-bottom: 1.25rem;
@@ -333,13 +412,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba($color-bg-card, 0.5); // Fondo semitransparente oscuro
+  background: rgba($color-bg-card, 0.5);
   border: 1px solid $color-border;
   border-radius: $radius-lg;
   padding: 1.1rem 1.5rem;
   text-decoration: none !important;
   transition: $transition-base;
-  backdrop-filter: blur(4px); // Efecto frosted glass sobre la imagen trasera
+  backdrop-filter: blur(4px);
 
   &__content {
     display: flex;
@@ -365,13 +444,12 @@
     transition: all 0.3s ease;
   }
 
-  // HOVER EFECTO WHATSAPP PREMIUM
   &:hover {
     background: #25d366;
     border-color: #25d366;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(#25d366, 0.3);
-    backdrop-filter: none; // Desactiva el blur al activar el color pleno de WA
+    backdrop-filter: none;
 
     .disciplina-box__content {
       color: #ffffff;

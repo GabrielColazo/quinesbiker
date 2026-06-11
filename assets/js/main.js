@@ -1,3 +1,8 @@
+// ============================================================
+// main.js — Quines Biker
+// Lógica e interactividad del sitio (Integrado con Tabs)
+// ============================================================
+
 document.addEventListener('DOMContentLoaded', () => {
   const contenedor = document.getElementById('contenedorGelaria'); // Nota: asegurate si es contenedorGaleria o contenedorGelaria en tu HTML
   const contenedorReal = contenedor || document.getElementById('contenedorGaleria');
@@ -105,4 +110,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+
+  // ============================================================
+  // 6. NAVEGACIÓN INTELIGENTE DE PESTAÑAS (NUEVO)
+  // ============================================================
+  const tabLinks = document.querySelectorAll('.nav-tab-link');
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // Capturamos el ID de la pestaña que queremos prender
+      const tabId = this.getAttribute('data-to-tab');
+      const targetTabButton = document.getElementById(tabId);
+
+      // Si el botón de la pestaña existe, lo activamos usando la API de Bootstrap
+      if (targetTabButton) {
+        const tabInstance = window.bootstrap 
+          ? (window.bootstrap.Tab.getInstance(targetTabButton) || new window.bootstrap.Tab(targetTabButton))
+          : new bootstrap.Tab(targetTabButton);
+          
+        tabInstance.show();
+      }
+    });
+  });
+
+}); // Aquí termina el DOMContentLoaded general

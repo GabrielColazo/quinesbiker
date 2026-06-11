@@ -60,10 +60,10 @@
             <a class="nav-link" href="#bikepark">Bike Park</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#planes">Planes</a>
+            <a class="nav-link nav-tab-link" href="#planificacion" data-to-tab="abc-tab">Planificación</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#metodologia">Metodología</a>
+            <a class="nav-link nav-tab-link" href="#planificacion" data-to-tab="disciplinas-tab">Disciplinas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#galeria">Galería</a>
@@ -72,12 +72,14 @@
             <a class="nav-link" href="#coach">Staff</a>
           </li>
         </ul>
-        <a class="nav-link navbar-cta" href="#planes">Empezar a Entrenar</a>
+        <a class="nav-link navbar-cta nav-tab-link" href="#planificacion" data-to-tab="costos-tab">Empezar a
+          Entrenar</a>
       </div>
 
     </div>
   </nav>
 
+  <!-------- HERO----- -->
 
   <section class="hero" id="inicio">
 
@@ -101,7 +103,8 @@
               clases presenciales con circuito propio.
             </p>
 
-            <div class="hero__actions d-flex flex-column align-items-center flex-lg-row flex-wrap align-items-lg-start justify-content-center justify-content-lg-start gap-3 mt-4">
+            <div
+              class="hero__actions d-flex flex-column align-items-center flex-lg-row flex-wrap align-items-lg-start justify-content-center justify-content-lg-start gap-3 mt-4">
 
               <a href="#inscripcion"
                 class="btn navbar-cta px-4 py-2 fs-base d-inline-flex align-items-center justify-content-center">
@@ -153,7 +156,7 @@
     </div>
 
   </section>
-  
+
   <!-- ============================================================
        NIVELES
   ============================================================ -->
@@ -367,128 +370,254 @@
     </div>
   </section>
 
-  <!-- PLANES-->
+  <!---------------PLANES------------->
 
-
-  <section class="planes" id="planes">
+  <section class="planes" id="planificacion">
     <div class="container">
 
-      <div class="planes__header">
-        <div class="section-title-line"></div>
-        <h2 class="planes__title">Elegí el plan que se adapta a tu ritmo</h2>
-        <p class="planes__subtitle">Coaching a distancia para atletas de todo el país y el mundo.</p>
+      <div class="planes__header text-center">
+        <div class="section-title-line mx-auto"></div>
+        <h2 class="planes__title">Elegí tu camino de entrenamiento</h2>
+        <p class="planes__subtitle">Estructuras adaptadas a tu nivel, disciplina y objetivos actuales.</p>
       </div>
 
-      <div class="planes__grid">
+      <div class="d-flex justify-content-center w-100 mb-5">
+        <div class="d-inline-flex p-1 rounded-pill"
+          style="background: rgba(255,255,255, 0.02); border: 1px solid rgba(255,255,255,0.05);">
 
-        <div class="planes__card planes__card--basico">
-          <div class="planes__plan-name">Plan Básico</div>
-          <div class="planes__price">
-            <span class="planes__price-currency">$</span>
-            <span class="planes__price-amount">30.000</span>
-            <span class="planes__price-period">/ mes</span>
-          </div>
-          <hr class="planes__divider" />
-          <ul class="planes__features">
-            <li class="planes__feature">
-              <span class="planes__feature-check">✓</span>
-              Planificación de entrenamiento semanal
+          <ul class="nav nav-pills justify-content-center gap-2 m-0 border-0" id="planificacionTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active px-4 py-2 fw-semibold text-uppercase" id="abc-tab" data-bs-toggle="tab"
+                data-bs-target="#tab-abc" type="button" role="tab" aria-controls="tab-abc" aria-selected="true"
+                style="letter-spacing: 0.05em;">
+                ¿Cómo entrenamos?
+              </button>
             </li>
-            <li class="planes__feature">
-              <span class="planes__feature-check">✓</span>
-              Envío de rutina en formato Excel
+            <li class="nav-item" role="presentation">
+              <button class="nav-link px-4 py-2 fw-semibold text-uppercase" id="disciplinas-tab" data-bs-toggle="tab"
+                data-bs-target="#tab-disciplinas" type="button" role="tab" aria-controls="tab-disciplinas"
+                aria-selected="false" style="letter-spacing: 0.05em;">
+                Disciplinas
+              </button>
             </li>
-            <li class="planes__feature">
-              <span class="planes__feature-check">✓</span>
-              Adaptado a tus horarios y nivel (Inicial, Intermedio o Pro)
+            <li class="nav-item" role="presentation">
+              <button class="nav-link px-4 py-2 fw-semibold text-uppercase" id="costos-tab" data-bs-toggle="tab"
+                data-bs-target="#tab-costos" type="button" role="tab" aria-controls="tab-costos" aria-selected="false"
+                style="letter-spacing: 0.05em;">
+                Planes y Costos
+              </button>
             </li>
           </ul>
-          <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20inscribirme%20al%20Plan%20B%C3%A1sico%20de%20Quines%20Biker"
-            class="planes__btn planes__btn--basico" target="_blank">
-            Elegir Plan Básico
-          </a>
+
+        </div>
+      </div>
+      <div class="tab-content" id="planificacionTabsContent">
+
+        <div class="tab-pane fade show active" id="tab-abc" role="tabpanel" aria-labelledby="abc-tab">
+          <div class="row g-4 justify-content-center align-items-stretch">
+
+            <div class="col-lg-6">
+              <div class="p-4 h-100 rounded-4"
+                style="background: rgba(255,255,255, 0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <i class="bi bi-calendar-check fs-3 text-warning"></i>
+                  <h4 class="m-0 fw-bold text-white fs-5">¿Qué es una planificación semanal?</h4>
+                </div>
+                <p class="text-white-50 small mb-4">
+                  Pensado para quienes recién inician: es organizar tus salidas y actividades durante toda la semana de
+                  forma ordenada, evitando entrenar al azar o exigirte demasiado de golpe. Tu cuerpo se adapta poco a
+                  poco, gana condición física y reduce el riesgo de lesiones.
+                </p>
+                <ul class="list-unstyled d-flex flex-column gap-3 text-white-50 small">
+                  <li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-arrow-right-circle-fill text-warning mt-1"></i>
+                    <span><strong>Distribuir el esfuerzo:</strong> Días de actividad moderada, días más suaves y días de
+                      descanso activo o reposo total.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-arrow-right-circle-fill text-warning mt-1"></i>
+                    <span><strong>Respetar la recuperación:</strong> Es exactamente en el descanso cuando tu cuerpo se
+                      fortalece realmente.</span>
+                  </li>
+                  <li class="d-flex align-items-start gap-2">
+                    <i class="bi bi-arrow-right-circle-fill text-warning mt-1"></i>
+                    <span><strong>Progreso seguro:</strong> Ir aumentando poco a poco la duración o intensidad, nunca de
+                      forma brusca. Una buena planificación te ayuda a mantener la constancia.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="p-4 h-100 rounded-4"
+                style="background: rgba(255,255,255, 0.03); border: 1px solid rgba(255,255,255,0.05);">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <i class="bi bi-phone-vibrate fs-3 text-warning"></i>
+                  <h4 class="m-0 fw-bold text-white fs-5">¿Cómo recibir tus planes?</h4>
+                </div>
+                <p class="text-white-50 small mb-4">
+                  No es necesario contar con equipos avanzados ni relojes costosos para seguir tus entrenamientos. En
+                  Quines Biker te ofrecemos dos opciones prácticas que se adaptan a lo que tenés:
+                </p>
+
+                <div class="mb-3 p-3 rounded-3" style="background: rgba(255,255,255,0.02);">
+                  <h5 class="fs-6 text-white mb-2"><i class="bi bi-file-earmark-excel text-success me-2"></i>Opción
+                    Tradicional (Sin reloj inteligente)</h5>
+                  <p class="m-0 text-white-50 small">Te enviamos tu planificación organizada en un <strong>archivo Excel
+                      detallado</strong>, para que lo consultes desde tu computadora o celular cuando quieras.</p>
+                </div>
+
+                <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.02);">
+                  <h5 class="fs-6 text-white mb-2"><i class="bi bi-lightning-charge-fill text-info me-2"></i>Opción
+                    Especializada (Plataforma)</h5>
+                  <p class="m-0 text-white-50 small">Compartimos el plan directamente en la app
+                    <strong>TrainingPeaks</strong>, donde verás de forma clara cada sesión, su duración, intensidad y
+                    objetivo listo para seguir paso a paso.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <div class="planes__card planes__card--premium">
-          <span class="planes__popular">⭐ Más Elegido</span>
-          <div class="planes__plan-name">Plan Premium</div>
-          <div class="planes__price">
-            <span class="planes__price-currency">$</span>
-            <span class="planes__price-amount">60.000</span>
-            <span class="planes__price-period">/ mes</span>
+        <div class="tab-pane fade" id="tab-disciplinas" role="tabpanel" aria-labelledby="disciplinas-tab">
+          <div id="planifica-entrenamiento" class="planes__disciplinas m-0 p-4 rounded-4"
+            style="border: 1px solid rgba(255,255,255,0.05);">
+            <div class="planes__disciplinas-header text-center mb-4">
+              <h3 class="planes__disciplinas-title fs-4">Disciplinas que planificamos</h3>
+              <p class="planes__disciplinas-subtitle small">Encontrá estructuras y guías adaptadas a cada especialidad
+                de forma segura:</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+              <div class="col-sm-6 col-md-4 text-center"> <a
+                  href="https://wa.me/2664818711?text=¡Hola!%20Estoy%20interesado%20en%20la%20Planificación%20de%20Ciclismo.%20Me%20gustaría%20coordinar%20para%20armar%20mi%20plan."
+                  class="disciplina-box mb-2 d-flex" target="_blank">
+                  <div class="disciplina-box__content">
+                    <i class="bi bi-bicycle"></i>
+                    <span>Ciclismo</span>
+                  </div>
+                  <i class="bi bi-whatsapp whatsapp-icon"></i>
+                </a>
+                <small class="text-white-50 d-block px-2" style="font-size: 0.825rem; line-height: 1.4;">
+                  Entrenamiento en ruta, MTB o Rural. Mejorá tu potencia, resistencia y técnica sobre la bici.
+                </small>
+              </div>
+
+              <div class="col-sm-6 col-md-4 text-center">
+                <a href="https://wa.me/2664818711?text=¡Hola!%20Quiero%20entrenar%20para%20Duatlón.%20Me%20gustaría%20solicitar%20información%20sobre%20la%20planificación."
+                  class="disciplina-box mb-2 d-flex" target="_blank">
+                  <div class="disciplina-box__content">
+                    <i class="bi bi-clock-history"></i>
+                    <span>Duatlón</span>
+                  </div>
+                  <i class="bi bi-whatsapp whatsapp-icon"></i>
+                </a>
+                <small class="text-white-50 d-block px-2" style="font-size: 0.825rem; line-height: 1.4;">
+                  Combinación estratégica de pedestrismo (carrera a pie) y ciclismo. Optimizá tus transiciones.
+                </small>
+              </div>
+
+              <div class="col-sm-6 col-md-4 text-center">
+                <a href="https://wa.me/2664818711?text=¡Hola!%20Me%20interesa%20la%20planificación%20integral%20para%20Triatlón.%20¿Me%20podrían%20dar%20más%20detalles?"
+                  class="disciplina-box mb-2 d-flex" target="_blank">
+                  <div class="disciplina-box__content">
+                    <i class="bi bi-water"></i>
+                    <span>Triatlón</span>
+                  </div>
+                  <i class="bi bi-whatsapp whatsapp-icon"></i>
+                </a>
+                <small class="text-white-50 d-block px-2" style="font-size: 0.825rem; line-height: 1.4;">
+                  El desafío máximo: natación, ciclismo y carrera a pie. Planificá tus cargas para rendir en las tres
+                  áreas.
+                </small>
+              </div>
+
+            </div>
           </div>
-          <hr class="planes__divider" />
-          <ul class="planes__features">
-            <li class="planes__feature">
-              <span class="planes__feature-check">✓</span>
-              Planificación y seguimiento avanzado por TrainingPeaks
-            </li>
-            <li class="planes__feature">
-              <span class="planes__feature-check">✓</span>
-              Plan de alimentación enfocado en rendimiento y salud
-            </li>
-            <li class="planes__feature">
-              <span class="planes__feature-check">✓</span>
-              Seguimiento semanal y cambio de hábitos saludables
-            </li>
-            <li class="planes__feature">
-              <span class="planes__feature-check">✓</span>
-              Feedback y análisis continuo de métricas
-            </li>
-          </ul>
-          <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20inscribirme%20al%20Plan%20Premium%20de%20Quines%20Biker"
-            class="planes__btn planes__btn--premium" target="_blank">
-            Elegir Plan Premium
-          </a>
+        </div>
+
+        <div class="tab-pane fade" id="tab-costos" role="tabpanel" aria-labelledby="costos-tab">
+          <div class="planes__grid planes__grid--3cols">
+
+            <div class="planes__card planes__card--basico">
+              <div class="planes__plan-name">Plan Básico</div>
+              <div class="planes__price">
+                <span class="planes__price-currency">$</span>
+                <span class="planes__price-amount">30.000</span>
+                <span class="planes__price-period">/ mes</span>
+              </div>
+              <hr class="planes__divider" />
+              <ul class="planes__features">
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Estructura semanal sencilla y
+                  progresiva</li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Recibís el plan en formato
+                  Excel o por TrainingPeaks</li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Seguimiento general y ajustes
+                  mensuales</li>
+              </ul>
+              <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20inscribirme%20al%20Plan%20B%C3%A1sico%20de%20Quines%20Biker"
+                class="planes__btn planes__btn--basico" target="_blank">
+                Elegir Plan Básico
+              </a>
+            </div>
+
+            <div class="planes__card planes__card--intermedio">
+              <div class="planes__plan-name">Plan Intermedio</div>
+              <div class="planes__price">
+                <span class="planes__price-currency">$</span>
+                <span class="planes__price-amount">45.000</span>
+                <span class="planes__price-period">/ mes</span>
+              </div>
+              <hr class="planes__divider" />
+              <ul class="planes__features">
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Planificación detallada según
+                  tu disciplina</li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Control de evolución periódico
+                </li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Disponible en Excel o
+                  directamente en TrainingPeaks</li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Recomendaciones sobre técnica y
+                  recuperación</li>
+              </ul>
+              <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20inscribirme%20al%20Plan%20Intermedio%20de%20Quines%20Biker"
+                class="planes__btn planes__btn--intermedio" target="_blank">
+                Elegir Plan Intermedio
+              </a>
+            </div>
+
+            <div class="planes__card planes__card--premium">
+              <span class="planes__popular">⭐ Más Elegido</span>
+              <div class="planes__plan-name">Plan Premium</div>
+              <div class="planes__price">
+                <span class="planes__price-currency">$</span>
+                <span class="planes__price-amount">60.000</span>
+                <span class="planes__price-period">/ mes</span>
+              </div>
+              <hr class="planes__divider" />
+              <ul class="planes__features">
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Diseño personalizado y ajustado
+                  semana a semana</li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Seguimiento cercano y revisión
+                  constante</li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Integración completa con
+                  TrainingPeaks</li>
+                <li class="planes__feature"><span class="planes__feature-check">✓</span> Asesoramiento integral:
+                  nutrición, recuperación y estrategia</li>
+              </ul>
+              <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20inscribirme%20al%20Plan%20Premium%20de%20Quines%20Biker"
+                class="planes__btn planes__btn--premium" target="_blank">
+                Elegir Plan Premium
+              </a>
+            </div>
+
+          </div>
         </div>
 
       </div>
 
-      <div id="planifica-entrenamiento" class="planes__disciplinas planes__disciplinas--bg-image">
-        <div class="planes__disciplinas-header text-center">
-          <h3 class="planes__disciplinas-title">Planificá tu entrenamiento</h3>
-          <p class="planes__disciplinas-subtitle">Seleccioná tu especialidad y coordinamos tu plan a medida</p>
-        </div>
-
-        <div class="row g-3 justify-content-center">
-
-          <div class="col-sm-6 col-md-4">
-            <a href="https://wa.me/2664818711?text=¡Hola!%20Estoy%20interesado%20en%20la%20Planificación%20de%20Ciclismo.%20Me%20gustaría%20coordinar%20para%20armar%20mi%20plan."
-              class="disciplina-box" target="_blank">
-              <div class="disciplina-box__content">
-                <i class="bi bi-bicycle"></i>
-                <span>Ciclismo</span>
-              </div>
-              <i class="bi bi-whatsapp whatsapp-icon"></i>
-            </a>
-          </div>
-
-          <div class="col-sm-6 col-md-4">
-            <a href="https://wa.me/2664818711?text=¡Hola!%20Quiero%20entrenar%20para%20Duatlón.%20Me%20gustaría%20solicitar%20información%20sobre%20la%20planificación."
-              class="disciplina-box" target="_blank">
-              <div class="disciplina-box__content">
-                <i class="bi bi-clock-history"></i>
-                <span>Duatlón</span>
-              </div>
-              <i class="bi bi-whatsapp whatsapp-icon"></i>
-            </a>
-          </div>
-
-          <div class="col-sm-6 col-md-4">
-            <a href="https://wa.me/2664818711?text=¡Hola!%20Me%20interesa%20la%20planificación%20integral%20para%20Triatlón.%20¿Me%20podrían%20dar%20más%20detalles?"
-              class="disciplina-box" target="_blank">
-              <div class="disciplina-box__content">
-                <i class="bi bi-water"></i>
-                <span>Triatlón</span>
-              </div>
-              <i class="bi bi-whatsapp whatsapp-icon"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="planes__presencial">
+      <div class="planes__presencial mt-5">
         <p>¿Buscás clases presenciales o la Escuela Infantil? Consultanos por los abonos disponibles.</p>
         <a href="https://wa.me/2664818711?text=Hola!%20Quiero%20consultar%20por%20abonos%20presenciales%20en%20Quines%20Biker"
           class="btn-brand btn-brand--ghost" target="_blank">
@@ -498,7 +627,6 @@
 
     </div>
   </section>
-
 
   <!-- ============================================================
        METODOLOGÍA
@@ -1000,7 +1128,6 @@
 
       <div class="footer__main">
 
-        <!-- Brand -->
         <div class="footer__brand">
           <div class="footer__logo-box">
             <img class="footer__logo" src="./assets/img/logodefinitivo.webp" alt="Quines Biker" />
@@ -1031,17 +1158,21 @@
           </div>
         </div>
 
-        <!-- Navegación Horizontal -->
         <div class="footer__nav">
           <ul class="footer__nav-list list-unstyled">
-            <li><a class="footer__nav-link" href="#inicio">Inicio</a></li>
+            <li><a class="footer__nav-link" href="#">Inicio</a></li>
             <li><a class="footer__nav-link" href="#niveles">Entrenar</a></li>
             <li><a class="footer__nav-link" href="#presencial">Presencial</a></li>
             <li><a class="footer__nav-link" href="#bikepark">Bike Park</a></li>
-            <li><a class="footer__nav-link" href="#planes">Planes</a></li>
-            <li><a class="footer__nav-link" href="#metodologia">Metodología</a></li>
+
+            <li><a class="footer__nav-link nav-tab-link" href="#planificacion" data-to-tab="abc-tab">Planificación</a>
+            </li>
+            <li><a class="footer__nav-link nav-tab-link" href="#planificacion"
+                data-to-tab="disciplinas-tab">Disciplinas</a></li>
+            <li><a class="footer__nav-link nav-tab-link" href="#planificacion" data-to-tab="costos-tab">Planes y
+                Costos</a></li>
+
             <li><a class="footer__nav-link" href="#galeria">Galería</a></li>
-            <li><a class="footer__nav-link" href="#inscripcion">Inscripción</a></li>
             <li><a class="footer__nav-link" href="#coach">Staff</a></li>
           </ul>
         </div>
@@ -1060,6 +1191,8 @@
 
     </div>
   </footer>
+
+
   <!-- ============================================================
      WHATSAPP FLOTANTE
 ============================================================ -->
