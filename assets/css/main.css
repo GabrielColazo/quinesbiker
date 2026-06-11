@@ -612,53 +612,88 @@ section {
 .hero__actions {
   margin-bottom: 3rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
-.hero__actions .navbar-cta {
+@media (min-width: 992px) {
+  .hero__actions {
+    align-items: flex-start;
+    max-width: 490px;
+  }
+}
+.hero__actions-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+@media (min-width: 576px) {
+  .hero__actions-top {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media (min-width: 992px) {
+  .hero__actions-top {
+    justify-content: flex-start;
+  }
+}
+.hero__actions-top .navbar-cta {
   font-family: "Rajdhani", sans-serif;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border-radius: 50px;
   box-shadow: 0 0 16px rgba(234, 88, 12, 0.3);
+  padding: 0.5rem 1.5rem;
   transition: all 0.25s ease;
 }
-.hero__actions .navbar-cta i {
+.hero__actions-top .navbar-cta i {
   transition: transform 0.2s ease;
 }
-.hero__actions .navbar-cta:hover {
+.hero__actions-top .navbar-cta:hover {
   box-shadow: 0 0 24px rgba(234, 88, 12, 0.4);
   transform: translateY(-2px);
 }
-.hero__actions .navbar-cta:hover i {
+.hero__actions-top .navbar-cta:hover i {
   transform: translateX(4px);
 }
+.hero__actions-top .btn-brand--ghost {
+  padding: 0.5rem 1.5rem;
+}
 .hero__actions-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   margin-top: 0.5rem;
 }
-@media (min-width: 992px) {
-  .hero__actions-bottom {
-    margin-top: 1rem;
-    max-width: 490px;
-  }
-}
-.hero__actions .hero__btn-link {
+.hero__actions .hero__link-entrenar {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
   font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
   color: rgba(248, 250, 252, 0.65);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-decoration: none;
   border-bottom: 2px solid rgba(248, 250, 252, 0.15);
-  border-radius: 0;
+  padding: 0.25rem 0;
   transition: all 0.25s ease;
 }
-.hero__actions .hero__btn-link i {
+.hero__actions .hero__link-entrenar i {
   transition: transform 0.3s ease;
   color: #EA580C;
 }
-.hero__actions .hero__btn-link:hover {
+.hero__actions .hero__link-entrenar:hover {
   color: #F8FAFC;
   border-bottom-color: #EA580C;
 }
-.hero__actions .hero__btn-link:hover i {
+.hero__actions .hero__link-entrenar:hover i {
   transform: translateY(3px);
 }
 .hero__logo-floating {

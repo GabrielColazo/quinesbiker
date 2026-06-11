@@ -142,52 +142,88 @@
     }
   }
 
-  // Contenedor de Botones
+  // ─── SECCIÓN DE ACCIONES (CORREGIDA) ───────────────────────
   &__actions {
     margin-bottom: 3rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centra todo por defecto en mobile
+    gap: 1rem;
 
-    .navbar-cta {
-      font-family: $font-heading;
-      font-weight: $fw-bold;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: $radius-pill;
-      box-shadow: 0 0 16px rgba($color-accent, 0.3);
-      transition: $transition-base;
+    @media (min-width: 992px) {
+      align-items: flex-start; // En PC se alinea al flujo de la izquierda
+      max-width: 490px;        // Limita el contenedor al ancho de la botonera principal
+    }
 
-      i {
-        transition: transform 0.2s ease;
+    // Contenedor de los dos botones principales
+    &-top {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      align-items: center;
+
+      @media (min-width: 576px) {
+        flex-direction: row;
+        justify-content: center;
       }
 
-      &:hover {
-        box-shadow: $shadow-glow-orange;
-        transform: translateY(-2px);
+      @media (min-width: 992px) {
+        justify-content: flex-start; // Alinea los botones al inicio en PC
+      }
+
+      .navbar-cta {
+        font-family: $font-heading;
+        font-weight: $fw-bold;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border-radius: $radius-pill;
+        box-shadow: 0 0 16px rgba($color-accent, 0.3);
+        padding: 0.5rem 1.5rem;
+        transition: $transition-base;
 
         i {
-          transform: translateX(4px);
+          transition: transform 0.2s ease;
+        }
+
+        &:hover {
+          box-shadow: $shadow-glow-orange;
+          transform: translateY(-2px);
+
+          i {
+            transform: translateX(4px);
+          }
         }
       }
-    }
 
-    // Contenedor del tercer botón: centrado hasta tablet (991px) y con ancho máximo en PC (992px)
-    &-bottom {
-      margin-top: 0.5rem;
-      
-      @media (min-width: 992px) {
-        margin-top: 1rem;
-        max-width: 490px; // Se alinea al ancho que ocupan los dos botones superiores juntos en escritorio
+      .btn-brand--ghost {
+        padding: 0.5rem 1.5rem;
       }
     }
 
-    // Estilos del enlace inferior "Planificá tu entrenamiento"
-    .hero__btn-link {
+    // Contenedor del link decorativo inferior (Centrado exacto respecto a la botonera)
+    &-bottom {
+      width: 100%;
+      display: flex;
+      justify-content: center; // Centra en mobile y en PC respecto a su max-width
+      margin-top: 0.5rem;
+    }
+
+    // Estilos del enlace limpio "Planificá tu entrenamiento"
+    .hero__link-entrenar {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
       font-family: $font-heading;
+      font-size: $fs-base;
+      font-weight: $fw-semibold;
       color: rgba($color-text, 0.65);
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      text-decoration: none;
       border-bottom: 2px solid rgba($color-text, 0.15);
-      border-radius: 0;
+      padding: 0.25rem 0;
       transition: $transition-base;
 
       i {
@@ -206,7 +242,7 @@
     }
   }
 
-  // LOGO FLOTANTE PREMIUM (Tamaño ideal y bien arriba)
+  // LOGO FLOTANTE PREMIUM
   &__logo-floating {
     display: none; 
 
@@ -236,7 +272,7 @@
     }
   }
 
-  // Stats (Reincorporadas)
+  // Stats
   &__stats {
     display: flex;
     flex-wrap: wrap;
@@ -270,7 +306,7 @@
     color: $color-text-muted;
   }
 
-  // Scroll indicator (Reincorporado y centrado estricto)
+  // Scroll indicator
   &__scroll {
     position: absolute;
     bottom: 2rem;
