@@ -45,15 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ============================================================
-  // 3. LÓGICA DINÁMICA DEL MODAL (VERSIÓN SEGURA NATIVA)
+  // 3. LÓGICA DINÁMICA DEL MODAL (VERSIÓN SEGURA COMPATIBLE)
   // ============================================================
   if (galeriaModal && modalImg) {
     galeriaModal.addEventListener('show.bs.modal', (event) => {
       const tarjetaClickada = event.relatedTarget;
-      const imagenInterna = tarjetaClickada.querySelector('.galeria-tira__img');
+      
+      // Intentamos buscar primero si es una foto de la galería
+      let imagenInterna = tarjetaClickada.querySelector('.galeria-tira__img');
+      
+      // Si no la encuentra, buscamos la imagen dentro del certificado del coach
+      if (!imagenInterna) {
+        imagenInterna = tarjetaClickada.querySelector('img');
+      }
       
       if (imagenInterna) {
-        // Copia la ruta exacta resuelta que ya se ve bien en la tira
+        // Copia la ruta exacta de la imagen para agrandarla en el modal
         modalImg.src = imagenInterna.src;
         modalImg.alt = imagenInterna.alt;
       }
