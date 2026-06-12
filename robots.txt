@@ -1,0 +1,6 @@
+# Explicación: Le da permiso a todos los buscadores (Google, Bing, etc.) para indexar la web
+User-agent: *
+Allow: /
+
+# El mapa de tu sitio para que Google rastree todas las secciones rápido
+Sitemap: https://www.quinesbiker.com.ar/sitemap.xml
