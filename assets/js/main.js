@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================
   if (contenedorReal) {
     let htmlContenido = '';
-    for (let i = 1; i <= 33; i++) {
+    for (let i = 1; i <= 26; i++) {
       htmlContenido += `
         <div class="galeria-tira__item" data-bs-toggle="modal" data-bs-target="#galeriaModal">
           <img src="./assets/img/galeria-${i}.webp" alt="Quines Biker en Acción - Foto ${i}" class="galeria-tira__img">
