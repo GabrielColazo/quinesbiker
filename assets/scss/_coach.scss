@@ -197,7 +197,7 @@
     margin-bottom: 0;
   }
 
-  // NUEVO ELEMENTO ANIDADO DE FORMA CORRECTA
+  // ELEMENTO ANIDADO
   &__certifications {
     .text-accent {
       color: $color-accent; // Aplica tu color flúor de variables
@@ -208,7 +208,7 @@
     }
   }
 
-  // ─── 🚀 NUEVAS REGLAS PARA LOS CERTIFICADOS DE PABLO ─────────────────
+  // ─── REGLAS PARA LOS CERTIFICADOS DE PABLO ─────────────────
   &__credentials {
     background: rgba(255, 255, 255, 0.01);
     border: 1px dashed rgba($color-border, 0.4);
@@ -326,12 +326,48 @@
     color: $color-text-muted;
   }
 
+  
   // ─── BOTONES DE ACCIÓN ──────────────────────────────────
   &__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center; // <--- ESTO CENTRA LOS BOTONES EN MOBILE
     margin-bottom: 1rem; // Separación respecto a los indicadores inferiores
+
+    // Estilo unificado para los botones internos (sean <a> o <button>)
+    .btn-brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: $font-heading;
+      font-weight: $fw-semibold;
+      transition: all 0.3s ease;
+      
+      // Comportamiento inteligente para pantallas chicas
+      flex: 1 1 100%; // <--- HACE QUE EN CELULARES OCUPEN TODO EL ANCHO Y SE CALCEN CENTRADOS
+      text-align: center;
+
+      // Cuando la pantalla sea más grande (PC / Tablet), vuelven a ponerse uno al lado del otro
+      @media (min-width: 480px) {
+        flex: 1;
+        min-width: 165px;
+      }
+
+      // Si la tarjeta tiene un solo botón (Ciclismo), evitamos que se estire al 100% en PC
+      &:only-child {
+        flex: initial;
+        min-width: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        
+        @media (max-width: 479px) {
+          flex: 1 1 100%; // En celular el botón único también se adapta lindo
+        }
+      }
+    }
   }
 
   // ─── CONTROLES DEL CARRUSEL (FLECHAS CUSTOMIZADAS) ──────
@@ -353,7 +389,7 @@
       border-color: $color-accent;
       .carousel-control-prev-icon,
       .carousel-control-next-icon {
-        filter: brightness(0) invert(1); // Hace la flecha negra/blanca según contraste
+        filter: brightness(0) invert(1);
       }
     }
 
@@ -392,7 +428,7 @@
     button {
       width: 10px;
       height: 10px;
-      border-radius: 50%; // De líneas nativas de bootstrap a círculos minimalistas
+      border-radius: 50%;
       background-color: rgba($color-text-muted, 0.4);
       border: none;
       transition: all 0.3s ease;
@@ -400,7 +436,7 @@
 
       &.active {
         background-color: $color-accent;
-        transform: scale(1.2); // El punto activo resalta levemente en tamaño
+        transform: scale(1.2);
       }
     }
   }

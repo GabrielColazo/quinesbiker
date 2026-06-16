@@ -2428,7 +2428,37 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
   margin-bottom: 1rem;
+}
+.coach__actions .btn-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  flex: 1 1 100%;
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .coach__actions .btn-brand {
+    flex: 1;
+    min-width: 165px;
+  }
+}
+.coach__actions .btn-brand:only-child {
+  flex: initial;
+  min-width: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+@media (max-width: 479px) {
+  .coach__actions .btn-brand:only-child {
+    flex: 1 1 100%;
+  }
 }
 .coach__control {
   width: 45px;

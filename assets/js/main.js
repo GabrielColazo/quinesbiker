@@ -140,4 +140,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ============================================================
+  // 7. MENSAJES DIRECTOS A WHATSAPP DESDE LOS ATLETAS (NUEVO)
+  // ============================================================
+  const WHATSAPP_NUMBER = "2664818711"; // Número oficial de Quines Biker
+  const botonesWhatsappCoach = document.querySelectorAll('.btn-whatsapp-coach');
+
+  botonesWhatsappCoach.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+      const nombreCoach = e.currentTarget.getAttribute('data-coach');
+      const mensaje = `Hola! Quiero contactarme con el profesional: ${nombreCoach}.`;
+      const mensajeCodificado = encodeURIComponent(mensaje);
+      const urlWhatsapp = `https://wa.me/${WHATSAPP_NUMBER}?text=${mensajeCodificado}`;
+      
+      window.open(urlWhatsapp, '_blank');
+    });
+  });
+
 }); // Aquí termina el DOMContentLoaded general
