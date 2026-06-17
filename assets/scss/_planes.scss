@@ -462,3 +462,101 @@
     }
   }
 }
+
+
+// ─── TAB PROFESIONALES ──────────────────────────────────────
+.profesional-card {
+  background: rgba($color-bg-card, 0.03);
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: $transition-base;
+
+  // Línea superior animada (igual que .planes__card--premium)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $gradient-cta;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba($color-accent, 0.35);
+    box-shadow: $shadow-glow-orange;
+    background: linear-gradient(145deg, $color-bg-card, rgba($color-accent, 0.05));
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .profesional-card__photo {
+      border-color: rgba($color-accent, 0.6);
+      box-shadow: 0 0 0 4px rgba($color-accent, 0.12);
+    }
+
+    .profesional-card__name {
+      color: $color-text;
+    }
+
+    .profesional-card__badge {
+      background: rgba($color-accent, 0.2);
+      border-color: rgba($color-accent, 0.4);
+    }
+  }
+
+  &__photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid $color-border;
+    transition: $transition-base;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__name {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: $fs-base;
+    color: $color-text;
+    transition: color 0.3s ease;
+  }
+
+  &__role {
+    font-family: $font-body;
+    font-size: $fs-sm;
+    color: $color-text-muted;
+  }
+
+  &__badge {
+    font-family: $font-heading;
+    font-size: $fs-xs;
+    font-weight: $fw-bold;
+    color: $color-accent;
+    background: rgba($color-accent, 0.1);
+    border: 1px solid rgba($color-accent, 0.2);
+    border-radius: $radius-pill;
+    padding: 0.3rem 0.85rem;
+    letter-spacing: 0.04em;
+    transition: $transition-base;
+  }
+}
