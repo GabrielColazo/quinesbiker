@@ -2457,7 +2457,6 @@ section {
 }
 .coach__certificates-gallery {
   display: flex;
-  justify-content: center;
   gap: 0.75rem;
 }
 .coach__certificate-thumb {
