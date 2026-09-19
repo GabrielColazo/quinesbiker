@@ -12,10 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalImg = document.getElementById('modalGaleriaImg');
   
   // ============================================================
-  // 1. GENERAR LAS 33 IMÁGENES AUTOMÁTICAMENTE
+  // 1. GENERAR LAS 36 IMÁGENES AUTOMÁTICAMENTE
   // ============================================================
   if (contenedorReal) {
     let htmlContenido = '';
+    for (let i = 27; i <= 36; i++) {
+      htmlContenido += `
+        <div class="galeria-tira__item" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+          <img src="./assets/img/imagenes-septiembre-2026/galeria-${i}.webp" alt="Quines Biker en Acción - Foto ${i}" class="galeria-tira__img">
+          <div class="galeria-tira__overlay">
+            <i class="bi bi-zoom-in galeria-tira__icon"></i>
+          </div>
+        </div>
+      `;
+    }
     for (let i = 1; i <= 26; i++) {
       htmlContenido += `
         <div class="galeria-tira__item" data-bs-toggle="modal" data-bs-target="#galeriaModal">
